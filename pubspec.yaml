@@ -1,0 +1,24 @@
+name: template_for_lamm
+description: Template For LAMM
+version: 1.0.0+1
+publish_to: 'none'
+
+environment:
+  sdk: '>=2.18.6 <3.0.0'
+  flutter: 3.3.10
+
+dependencies:
+  flutter:
+    sdk: flutter
+  library_architecture_mvvm_modify: ^0.0.2
+  intl: ^0.17.0
+  meta: ^1.8.0
+  cupertino_icons: ^1.0.2
+
+dev_dependencies:
+  test: ^1.21.4
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
+  generate: true
