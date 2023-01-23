@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:template_for_lamm/l10n/l10n.dart';
-import 'package:template_for_lamm/named_view/main_view.dart';
-import 'package:template_for_lamm/utility/flutter_theme.dart';
+import 'package:flutter_name/l10n/l10n.dart';
+import 'package:flutter_name/named_view/main_view.dart';
+import 'package:flutter_name/utility/flutter_theme.dart';
 
 class AppView
     extends StatelessWidget
