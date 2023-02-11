@@ -1,0 +1,26 @@
+name: mobile_or_tablet_my_project
+version: 1.0.0+1
+publish_to: 'none'
+
+environment:
+  sdk: '>=2.19.0 <3.0.0'
+  flutter: 3.7.0
+
+dependencies:
+  common_my_project:
+    path: ../common_my_project
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  intl: ^0.18.0
+  responsive_framework: ^0.2.0
+  meta: ^1.8.0
+  cupertino_icons: ^1.0.2
+
+dev_dependencies:
+  flutter_lints: ^2.0.1
+
+flutter:
+  uses-material-design: true
+  generate: true
