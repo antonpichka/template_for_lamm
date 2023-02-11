@@ -2,23 +2,7 @@
 
 How to use it ? Read below)
 
-## alfred_name
-
-### Recommendations
-
-Copy these files to your project (it's best to transfer these files to your project):
-- lib/
-- .gitignore
-- analysis_options.yaml
-- pubspec.yaml
-
-### If you need to change the application name from common_name to common_${your_name}
-
-Path: pubspec.yaml
-
-name: alfred_${your_name}
-
-## common_name
+## common_my_project
 
 ### Recommendations
 
@@ -29,25 +13,62 @@ Copy these files to your project (it's best to transfer these files to your proj
 - analysis_options.yaml
 - pubspec.yaml
 
-### If you need to change the application name from common_name to common_${your_name}
+### If you need to change the application name from 'common_my_project' to 'common_${your_name}'
 
 Path: pubspec.yaml
 
 name: common_${your_name}
 
-## flutter_name
+## desktop_my_project
 
 ### Recommendations
 
 Copy these files to your project (it's best to transfer these files to your project):
 - lib/
 - .gitignore
+- .metadata
 - analysis_options.yaml
 - l10.yaml
 - pubspec.yaml
 
-### If you need to change the application name from flutter_name to flutter_${your_name}
+### If you need to change the application name from 'desktop_my_project' to 'desktop_${your_name}'
 
 Path: pubspec.yaml
 
-name: flutter_${your_name}
+name: desktop_${your_name}
+
+## mobile_or_tablet_my_project
+
+### Recommendations
+
+Copy these files to your project (it's best to transfer these files to your project):
+- lib/
+- .gitignore
+- .metadata
+- analysis_options.yaml
+- l10.yaml
+- pubspec.yaml
+
+### If you need to change the application name from 'mobile_or_tablet_my_project' to 'mobile_or_tablet_${your_name}'
+
+Path: pubspec.yaml
+
+name: mobile_or_tablet_${your_name}
+
+## web_my_project
+
+### Recommendations
+
+Copy these files to your project (it's best to transfer these files to your project):
+- lib/
+- .gitignore
+- .metadata
+- analysis_options.yaml
+- l10.yaml
+- pubspec.yaml
+
+### If you need to change the application name from 'web_my_project' to 'web_${your_name}'
+
+Path: pubspec.yaml
+
+name: web_${your_name}
