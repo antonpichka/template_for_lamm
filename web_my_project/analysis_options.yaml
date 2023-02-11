@@ -1,0 +1,11 @@
+include: package:flutter_lints/flutter.yaml
+
+linter:
+  rules:
+    use_key_in_widget_constructors: false
+    await_only_futures: true
+
+analyzer:
+  errors:
+    invalid_override_of_non_virtual_member: error
+    invalid_use_of_protected_member: error
