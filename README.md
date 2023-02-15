@@ -2,19 +2,19 @@
 
 How to use it ? Read below)
 
-## common_my_project
+## common_template_for_lamm
 
-### If you need to change the application name from 'common_my_project' to 'common_${your_name}'
+### If you need to change the application name from 'common_template_for_lamm' to 'common_${your_name}'
 
-Path: common_my_project/pubspec.yaml:
-- "name: common_my_project" to "name: common_${your_name}"
+Path: common_template_for_lamm/pubspec.yaml:
+- "name: common_template_for_lamm" to "name: common_${your_name}"
 
-## desktop_my_project
+## desktop_template_for_lamm
 
-### If you need to change the application name from 'desktop_my_project' to 'desktop_${your_name}'
+### If you need to change the application name from 'desktop_template_for_lamm' to 'desktop_${your_name}'
 
-Path: desktop_my_project/pubspec.yaml:
-- "name: desktop_my_project" to "name: desktop_${your_name}"
+Path: desktop_template_for_lamm/pubspec.yaml:
+- "name: desktop_template_for_lamm" to "name: desktop_${your_name}"
 
 #### Delete directories
 
@@ -25,12 +25,12 @@ Path: desktop_my_project/pubspec.yaml:
 - cd desktop_${your_name}
 - flutter create --org ${example_com.jacobodd} --template=app --platforms=windows,macos,linux .
 
-## mobile_or_tablet_my_project
+## mobile_or_tablet_template_for_lamm
 
-### If you need to change the application name from 'mobile_or_tablet_my_project' to 'mobile_or_tablet_${your_name}'
+### If you need to change the application name from 'mobile_or_tablet_template_for_lamm' to 'mobile_or_tablet_${your_name}'
 
-Path: mobile_or_tablet_my_project/pubspec.yaml:
-- "name: mobile_or_tablet_my_project" to "name: mobile_or_tablet_${your_name}"
+Path: mobile_or_tablet_template_for_lamm/pubspec.yaml:
+- "name: mobile_or_tablet_template_for_lamm" to "name: mobile_or_tablet_${your_name}"
 
 #### Delete directories
 
@@ -41,12 +41,12 @@ Path: mobile_or_tablet_my_project/pubspec.yaml:
 - cd mobile_or_tablet_${your_name}
 - flutter create --org ${example_com.jacobodd} --template=app --platforms=android,ios .
 
-## web_my_project
+## web_template_for_lamm
 
-### If you need to change the application name from 'web_my_project' to 'web_${your_name}'
+### If you need to change the application name from 'web_template_for_lamm' to 'web_${your_name}'
 
-Path: web_my_project/pubspec.yaml:
-- "name: web_my_project" to "name: web_${your_name}"
+Path: web_template_for_lamm/pubspec.yaml:
+- "name: web_template_for_lamm" to "name: web_${your_name}"
 
 #### Delete directories
 
