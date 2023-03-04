@@ -1,5 +1,5 @@
-import 'package:common_template_for_lamm/named_view_list_view_model/mobile_main_view_list_view_model.dart';
 import 'package:flutter/material.dart';
+import 'package:mobile_or_tablet_template_for_lamm/named_view_list_view_model/mobile_main_view_list_view_model.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
 class MobileMainView
