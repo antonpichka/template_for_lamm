@@ -1,4 +1,4 @@
-import 'package:common_template_for_lamm/named_view_list_view_model/desktop_main_view_list_view_model.dart';
+import 'package:desktop_template_for_lamm/named_view_list_view_model/desktop_main_view_list_view_model.dart';
 import 'package:flutter/material.dart';
 
 class DesktopMainView
