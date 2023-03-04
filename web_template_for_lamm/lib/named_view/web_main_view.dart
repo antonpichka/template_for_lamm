@@ -1,6 +1,6 @@
-import 'package:common_template_for_lamm/named_view_list_view_model/web_main_view_list_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_framework/responsive_framework.dart';
+import 'package:web_template_for_lamm/named_view_list_view_model/web_main_view_list_view_model.dart';
 
 class WebMainView
     extends StatefulWidget
