@@ -6,7 +6,7 @@ import 'package:mobile_or_tablet_template_for_lamm/utility/flutter_theme.dart';
 import 'package:mobile_or_tablet_template_for_lamm/utility/platform_view_selection.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
-class MobileOrTabletAppView
+final class MobileOrTabletAppView
     extends StatelessWidget
 {
   // final _lo = MobileOrTabletAppViewListViewModel();
@@ -20,16 +20,14 @@ class MobileOrTabletAppView
         // you need to write this line
         // (this is if you test on an android emulator, I did not test it on other emulators)
         themeMode: ThemeMode.dark,
-        theme: FlutterTheme.light,
         darkTheme: FlutterTheme.dark,
         localizationsDelegates: AppLocalizations.localizationsDelegates,
         supportedLocales: AppLocalizations.supportedLocales,
-        builder: (context, widget) => ResponsiveWrapper.builder(
-          ClampingScrollWrapper.builder(context, widget!),
-          defaultScale: true,
+        builder: (context, widget) => ResponsiveBreakpoints .builder(
+          child: ClampingScrollWrapper.builder(context, widget!),
           breakpoints: [
-            const ResponsiveBreakpoint.resize(350, name: MOBILE),
-            const ResponsiveBreakpoint.autoScale(600, name: TABLET),
+            const Breakpoint(start: 0,end: 450, name: MOBILE),
+            const Breakpoint(start: 451,end: 999, name: TABLET),
           ],
         ),
         initialRoute: "/",

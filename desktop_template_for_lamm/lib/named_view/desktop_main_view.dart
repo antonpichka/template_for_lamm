@@ -1,14 +1,14 @@
 import 'package:desktop_template_for_lamm/named_view_list_view_model/desktop_main_view_list_view_model.dart';
 import 'package:flutter/material.dart';
 
-class DesktopMainView
+final class DesktopMainView
     extends StatefulWidget
 {
   @override
   State<DesktopMainView> createState() => _DesktopMainViewState();
 }
 
-class _DesktopMainViewState
+final class _DesktopMainViewState
     extends State<DesktopMainView>
 {
   late final DesktopMainViewListViewModel _lo;

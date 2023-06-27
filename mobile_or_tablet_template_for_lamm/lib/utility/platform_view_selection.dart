@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
-class PlatformViewSelection {
+final class PlatformViewSelection {
   static Widget getSelectedViewPlatform(
       BuildContext context,
       {Widget? mobileView,
         Widget? tabletView})
   {
-    if(ResponsiveWrapper.of(context).isMobile
+    if(ResponsiveBreakpoints.of(context).isMobile
         && mobileView != null)
     {
       return mobileView;
     }
-    if(ResponsiveWrapper.of(context).isTablet
+    if(ResponsiveBreakpoints.of(context).isTablet
         && tabletView != null)
     {
       return tabletView;

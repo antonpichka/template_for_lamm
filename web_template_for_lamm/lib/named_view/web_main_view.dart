@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:web_template_for_lamm/named_view_list_view_model/web_main_view_list_view_model.dart';
 
-class WebMainView
+final class WebMainView
     extends StatefulWidget
 {
   @override
   State<WebMainView> createState() => _WebMainViewState();
 }
 
-class _WebMainViewState
+final class _WebMainViewState
     extends State<WebMainView>
 {
   late final WebMainViewListViewModel _lo;
@@ -31,19 +31,19 @@ class _WebMainViewState
     final text = ResponsiveValue<String>(
       context,
       defaultValue: "Hello World TABLET",
-      valueWhen: [
-        const Condition.equals(name: TABLET, value: "Hello World TABLET"),
-        const Condition.largerThan(name: TABLET, value: "Hello World DESKTOP"),
-        const Condition.smallerThan(name: TABLET, value: "Hello World MOBILE")
+      conditionalValues: [
+        Condition.equals(name: TABLET, value: "Hello World TABLET"),
+        Condition.largerThan(name: TABLET, value: "Hello World DESKTOP"),
+        Condition.smallerThan(name: TABLET, value: "Hello World MOBILE")
       ],
     ).value;
     final textSize = ResponsiveValue<double>(
       context,
       defaultValue: 24.0,
-      valueWhen: [
-        const Condition.equals(name: TABLET, value: 24.0),
-        const Condition.largerThan(name: TABLET, value: 40.0),
-        const Condition.smallerThan(name: TABLET, value: 14.0)
+      conditionalValues: [
+        Condition.equals(name: TABLET, value: 24.0),
+        Condition.largerThan(name: TABLET, value: 40.0),
+        Condition.smallerThan(name: TABLET, value: 14.0)
       ],
     ).value;
     return Scaffold(

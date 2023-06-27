@@ -4,7 +4,7 @@ import 'package:web_template_for_lamm/l10n/l10n.dart';
 import 'package:web_template_for_lamm/named_view/web_main_view.dart';
 import 'package:web_template_for_lamm/utility/flutter_theme.dart';
 
-class WebAppView
+final class WebAppView
     extends StatelessWidget
 {
   // final _lo = WebAppViewListViewModel();
@@ -18,17 +18,15 @@ class WebAppView
         // you need to write this line
         // (this is if you test on an android emulator, I did not test it on other emulators)
         themeMode: ThemeMode.dark,
-        theme: FlutterTheme.light,
         darkTheme: FlutterTheme.dark,
         localizationsDelegates: AppLocalizations.localizationsDelegates,
         supportedLocales: AppLocalizations.supportedLocales,
-        builder: (context, widget) => ResponsiveWrapper.builder(
-          ClampingScrollWrapper.builder(context, widget!),
-          defaultScale: true,
+        builder: (context, widget) => ResponsiveBreakpoints.builder(
+          child: ClampingScrollWrapper.builder(context, widget!),
           breakpoints: [
-            const ResponsiveBreakpoint.autoScaleDown(450, name: MOBILE),
-            const ResponsiveBreakpoint.autoScale(800, name: TABLET),
-            const ResponsiveBreakpoint.resize(1200, name: DESKTOP),
+            const Breakpoint(start: 0,end: 450, name: MOBILE),
+            const Breakpoint(start: 451,end: 999, name: TABLET),
+            const Breakpoint(start: 1000,end: double.infinity,name: DESKTOP),
           ],
         ),
         initialRoute: "/",

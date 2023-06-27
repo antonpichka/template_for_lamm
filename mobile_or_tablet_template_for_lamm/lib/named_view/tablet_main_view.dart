@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:mobile_or_tablet_template_for_lamm/named_view_list_view_model/tablet_main_view_list_view_model.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
-class TabletMainView
+final class TabletMainView
     extends StatefulWidget
 {
   @override
   State<TabletMainView> createState() => _TabletMainViewState();
 }
 
-class _TabletMainViewState
+final class _TabletMainViewState
     extends State<TabletMainView>
 {
   late final TabletMainViewListViewModel _lo;

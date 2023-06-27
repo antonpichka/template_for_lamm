@@ -7,6 +7,5 @@ Future<void> main() async {
   // Removes "#" from URL, for more check out link below:
   // https://docs.flutter.dev/development/ui/navigation/url-strategies
   usePathUrlStrategy();
-
   runApp(WebAppView());
 }

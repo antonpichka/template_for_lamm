@@ -23,7 +23,7 @@ Path: desktop_template_for_lamm/pubspec.yaml:
 #### Commands
 
 - cd desktop_${your_name}
-- flutter create --org ${example_com.jacobodd} --template=app --platforms=windows,macos,linux .
+- flutter create --org ${example_com.antonpichka} --template=app --platforms=windows,macos,linux .
 
 ## mobile_or_tablet_template_for_lamm
 
@@ -39,7 +39,7 @@ Path: mobile_or_tablet_template_for_lamm/pubspec.yaml:
 #### Commands
 
 - cd mobile_or_tablet_${your_name}
-- flutter create --org ${example_com.jacobodd} --template=app --platforms=android,ios .
+- flutter create --org ${example_com.antonpichka} --template=app --platforms=android,ios .
 
 ## web_template_for_lamm
 
@@ -55,5 +55,5 @@ Path: web_template_for_lamm/pubspec.yaml:
 #### Commands
 
 - cd web_${your_name}
-- flutter create --org ${example_com.jacobodd} --template=app --platforms=web .
+- flutter create --org ${example_com.antonpichka} --template=app --platforms=web .
 

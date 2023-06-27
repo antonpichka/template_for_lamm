@@ -1,47 +1,41 @@
 import 'package:flutter/material.dart';
 
-class FlutterTheme {
-  static const Color primaryColor = Color.fromRGBO(66, 66, 66, 1.0);
-  static const Color lightBackgroundColor = Color.fromRGBO(109, 109, 109,1.0);
-  static const Color darkBackgroundColor = Color.fromRGBO(27, 27, 27, 1.0);
-  
-  static ThemeData get light {
-    return ThemeData.from(
-      useMaterial3: true,
-      textTheme: Typography.material2021().black,
-      colorScheme: const ColorScheme(
-        brightness: Brightness.light,
-        primary: primaryColor, 
-        onPrimary: primaryColor,
-        background: lightBackgroundColor,
-        onBackground: lightBackgroundColor,
-        secondary: Colors.white,
-        onSecondary: Colors.white,
-        surface: Colors.white,
-        onSurface: Colors.white,
-        error: Colors.white,
-        onError: Colors.white,
-      ),
-    );
-  }
+final class FlutterTheme {
+  static const Color darkPrimaryColor = Color.fromRGBO(64, 64, 64, 1.0);
+  static const Color darkSecondaryColor = Color.fromRGBO(255, 85, 0, 1.0);
+  static const Color darkSurfaceColor = Color.fromRGBO(31, 31, 31, 1.0);
+  static const Color darkAppBarBackgroundColor = Color.fromRGBO(22, 22, 22, 1.0);
+  static const Color darkBackgroundColor = Color.fromRGBO(18, 18, 18, 1.0);
+  static const Color darkDividerColor = Color.fromRGBO(48, 48, 48, 1.0);
 
   static ThemeData get dark {
-    return ThemeData.from(
+    return ThemeData(
       useMaterial3: true,
-      textTheme: Typography.material2021().white,
+      dividerColor: darkDividerColor,
+      appBarTheme: const AppBarTheme(
+        elevation: 1.0,
+        scrolledUnderElevation: 0,
+        backgroundColor: darkAppBarBackgroundColor,
+        titleTextStyle: TextStyle(color: Colors.white),
+        iconTheme: IconThemeData(
+            color: Colors.white60,
+            size: 40
+        ),
+      ),
       colorScheme: const ColorScheme(
         brightness: Brightness.dark,
-        primary: primaryColor,
-        onPrimary: primaryColor,
+        primary: darkPrimaryColor,
+        onPrimary: darkPrimaryColor,
+        secondary: darkSecondaryColor,
+        onSecondary: darkSecondaryColor,
+        surface: darkSurfaceColor,
+        onSurface: darkSurfaceColor,
         background: darkBackgroundColor,
         onBackground: darkBackgroundColor,
-        secondary: Colors.black,
-        onSecondary: Colors.black,
-        surface: Colors.black,
-        onSurface: Colors.black,
-        error: Colors.black,
-        onError: Colors.black,
+        error: Colors.red,
+        onError: Colors.red,
       ),
+      textTheme: Typography.material2021().white,
     );
   }
 }
