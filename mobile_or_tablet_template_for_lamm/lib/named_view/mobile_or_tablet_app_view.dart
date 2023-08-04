@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:mobile_or_tablet_template_for_lamm/l10n/l10n.dart';
 import 'package:mobile_or_tablet_template_for_lamm/named_view/mobile_main_view.dart';
 import 'package:mobile_or_tablet_template_for_lamm/named_view/tablet_main_view.dart';
-import 'package:mobile_or_tablet_template_for_lamm/utility/flutter_theme.dart';
-import 'package:mobile_or_tablet_template_for_lamm/utility/platform_view_selection.dart';
+import 'package:mobile_or_tablet_template_for_lamm/utility/flutter_theme_utility.dart';
+import 'package:mobile_or_tablet_template_for_lamm/utility/platform_view_selection_utility.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
 final class MobileOrTabletAppView
@@ -20,7 +20,7 @@ final class MobileOrTabletAppView
         // you need to write this line
         // (this is if you test on an android emulator, I did not test it on other emulators)
         themeMode: ThemeMode.dark,
-        darkTheme: FlutterTheme.dark,
+        darkTheme: FlutterThemeUtility.dark,
         localizationsDelegates: AppLocalizations.localizationsDelegates,
         supportedLocales: AppLocalizations.supportedLocales,
         builder: (context, widget) => ResponsiveBreakpoints .builder(
@@ -32,7 +32,7 @@ final class MobileOrTabletAppView
         ),
         initialRoute: "/",
         routes: {
-          "/" : (context) => PlatformViewSelection.getSelectedViewPlatform(
+          "/" : (context) => PlatformViewSelectionUtility.getSelectedViewPlatform(
               context,
               mobileView: MobileMainView(),
               tabletView: TabletMainView()),

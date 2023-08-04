@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:web_template_for_lamm/l10n/l10n.dart';
 import 'package:web_template_for_lamm/named_view/web_main_view.dart';
-import 'package:web_template_for_lamm/utility/flutter_theme.dart';
+import 'package:web_template_for_lamm/utility/flutter_theme_utility.dart';
 
 final class WebAppView
     extends StatelessWidget
@@ -18,7 +18,7 @@ final class WebAppView
         // you need to write this line
         // (this is if you test on an android emulator, I did not test it on other emulators)
         themeMode: ThemeMode.dark,
-        darkTheme: FlutterTheme.dark,
+        darkTheme: FlutterThemeUtility.dark,
         localizationsDelegates: AppLocalizations.localizationsDelegates,
         supportedLocales: AppLocalizations.supportedLocales,
         builder: (context, widget) => ResponsiveBreakpoints.builder(

@@ -11,13 +11,9 @@ dependencies:
     path: ../common_template_for_lamm
   flutter:
     sdk: flutter
-  window_size:
-    git:
-      url: https://github.com/google/flutter-desktop-embedding
-      path: plugins/window_size
   flutter_localizations:
     sdk: flutter
-  library_architecture_mvvm_modify: ^0.0.6
+  library_architecture_mvvm_modify: ^0.0.7
   intl: ^0.18.0
   meta: ^1.8.0
   cupertino_icons: ^1.0.2

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-final class FlutterTheme {
+final class FlutterThemeUtility {
   static const Color darkPrimaryColor = Color.fromRGBO(64, 64, 64, 1.0);
   static const Color darkSecondaryColor = Color.fromRGBO(255, 85, 0, 1.0);
   static const Color darkSurfaceColor = Color.fromRGBO(31, 31, 31, 1.0);
