@@ -1,28 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_framework/responsive_framework.dart';
-import 'package:web_template_for_lamm/named_view_list_view_model/web_main_view_list_view_model.dart';
+import 'package:web_template_for_lamm/named_view_list_view_model/main_view_list_view_model.dart';
 
-final class WebMainView
+final class MainView
     extends StatefulWidget
 {
+  final MainViewListViewModel mainViewListViewModel;
+
+  const MainView(this.mainViewListViewModel);
+
   @override
-  State<WebMainView> createState() => _WebMainViewState();
+  State<MainView> createState() => _MainViewState();
 }
 
-final class _WebMainViewState
-    extends State<WebMainView>
+final class _MainViewState
+    extends State<MainView>
 {
-  late final WebMainViewListViewModel _lo;
-
   @override
   void initState() {
     super.initState();
-    _lo = WebMainViewListViewModel();
   }
 
   @override
   void dispose() {
-    _lo.dispose();
+    widget
+        .mainViewListViewModel
+        .dispose();
     super.dispose();
   }
 

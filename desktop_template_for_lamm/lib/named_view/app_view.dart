@@ -1,13 +1,12 @@
 import 'package:desktop_template_for_lamm/l10n/l10n.dart';
-import 'package:desktop_template_for_lamm/named_view/desktop_main_view.dart';
-import 'package:desktop_template_for_lamm/utility/flutter_theme_utility.dart';
+import 'package:desktop_template_for_lamm/named_view/main_view.dart';
+import 'package:desktop_template_for_lamm/named_utility/flutter_theme_utility.dart';
+import 'package:desktop_template_for_lamm/named_view_list_view_model/main_view_list_view_model.dart';
 import 'package:flutter/material.dart';
 
-final class DesktopAppView
+final class AppView
     extends StatelessWidget
 {
-  // final _lo = DesktopAppViewListViewModel();
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -22,7 +21,7 @@ final class DesktopAppView
         supportedLocales: AppLocalizations.supportedLocales,
         initialRoute: "/",
         routes: {
-          "/" : (context) => DesktopMainView()
+          "/" : (context) => MainView(MainViewListViewModel())
         });
   }
 }

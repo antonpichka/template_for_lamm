@@ -5,6 +5,10 @@ import 'package:responsive_framework/responsive_framework.dart';
 final class MobileMainView
     extends StatefulWidget
 {
+  final MobileMainViewListViewModel mobileMainViewListViewModel;
+
+  const MobileMainView(this.mobileMainViewListViewModel);
+
   @override
   State<MobileMainView> createState() => _MobileMainViewState();
 }
@@ -12,17 +16,16 @@ final class MobileMainView
 final class _MobileMainViewState
     extends State<MobileMainView>
 {
-  late final MobileMainViewListViewModel _lo;
-
   @override
   void initState() {
-    _lo = MobileMainViewListViewModel();
     super.initState();
   }
 
   @override
   void dispose() {
-    _lo.dispose();
+    widget
+        .mobileMainViewListViewModel
+        .dispose();
     super.dispose();
   }
 

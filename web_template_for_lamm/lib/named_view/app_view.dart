@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:web_template_for_lamm/l10n/l10n.dart';
-import 'package:web_template_for_lamm/named_view/web_main_view.dart';
-import 'package:web_template_for_lamm/utility/flutter_theme_utility.dart';
+import 'package:web_template_for_lamm/named_view/main_view.dart';
+import 'package:web_template_for_lamm/named_utility/flutter_theme_utility.dart';
+import 'package:web_template_for_lamm/named_view_list_view_model/main_view_list_view_model.dart';
 
-final class WebAppView
+final class AppView
     extends StatelessWidget
 {
-  // final _lo = WebAppViewListViewModel();
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -31,7 +30,7 @@ final class WebAppView
         ),
         initialRoute: "/",
         routes: {
-          "/" : (context) =>  WebMainView()
+          "/" : (context) =>  MainView(MainViewListViewModel())
         });
   }
 }

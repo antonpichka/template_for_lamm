@@ -5,6 +5,10 @@ import 'package:responsive_framework/responsive_framework.dart';
 final class TabletMainView
     extends StatefulWidget
 {
+  final TabletMainViewListViewModel tabletMainViewListViewModel;
+
+  const TabletMainView(this.tabletMainViewListViewModel);
+
   @override
   State<TabletMainView> createState() => _TabletMainViewState();
 }
@@ -12,17 +16,16 @@ final class TabletMainView
 final class _TabletMainViewState
     extends State<TabletMainView>
 {
-  late final TabletMainViewListViewModel _lo;
-
   @override
   void initState() {
-    _lo = TabletMainViewListViewModel();
     super.initState();
   }
 
   @override
   void dispose() {
-    _lo.dispose();
+    widget
+        .tabletMainViewListViewModel
+        .dispose();
     super.dispose();
   }
 

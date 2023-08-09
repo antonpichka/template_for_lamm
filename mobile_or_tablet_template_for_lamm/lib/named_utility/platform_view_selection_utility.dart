@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
 final class PlatformViewSelectionUtility {
+  PlatformViewSelectionUtility._();
+
   static Widget getSelectedViewPlatform(
       BuildContext context,
       {Widget? mobileView,
