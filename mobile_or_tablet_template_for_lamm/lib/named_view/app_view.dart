@@ -4,13 +4,9 @@ import 'package:mobile_or_tablet_template_for_lamm/named_utility/flutter_theme_u
 import 'package:mobile_or_tablet_template_for_lamm/named_utility/platform_view_selection_utility.dart';
 import 'package:mobile_or_tablet_template_for_lamm/named_view/mobile_main_view.dart';
 import 'package:mobile_or_tablet_template_for_lamm/named_view/tablet_main_view.dart';
-import 'package:mobile_or_tablet_template_for_lamm/named_view_list_view_model/mobile_main_view_list_view_model.dart';
-import 'package:mobile_or_tablet_template_for_lamm/named_view_list_view_model/tablet_main_view_list_view_model.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
-final class AppView
-    extends StatelessWidget
-{
+final class AppView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -24,7 +20,7 @@ final class AppView
         localizationsDelegates: AppLocalizations.localizationsDelegates,
         supportedLocales: AppLocalizations.supportedLocales,
         builder: (context, widget) => ResponsiveBreakpoints .builder(
-          child: ClampingScrollWrapper.builder(context, widget!),
+          child: widget!,
           breakpoints: [
             const Breakpoint(start: 0,end: 450, name: MOBILE),
             const Breakpoint(start: 451,end: 999, name: TABLET),
@@ -34,8 +30,8 @@ final class AppView
         routes: {
           "/" : (context) => PlatformViewSelectionUtility.getSelectedViewPlatform(
               context,
-              mobileView: MobileMainView(MobileMainViewListViewModel()),
-              tabletView: TabletMainView(TabletMainViewListViewModel())),
+              mobileView: MobileMainView(),
+              tabletView: TabletMainView()),
         });
   }
 }

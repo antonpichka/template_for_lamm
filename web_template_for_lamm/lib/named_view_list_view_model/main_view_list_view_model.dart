@@ -1,8 +1,6 @@
-import 'package:library_architecture_mvvm_modify/base_named_view_list_view_model/base_named_view_list_view_model.dart';
+import 'package:library_architecture_mvvm_modify/library_architecture_mvvm_modify.dart';
 
-final class MainViewListViewModel
-    extends BaseNamedViewListViewModel
-{
+final class MainViewListViewModel extends BaseNamedViewListViewModel {
   @override
   void dispose() {}
 }

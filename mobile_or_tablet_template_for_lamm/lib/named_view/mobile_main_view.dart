@@ -2,30 +2,24 @@ import 'package:flutter/material.dart';
 import 'package:mobile_or_tablet_template_for_lamm/named_view_list_view_model/mobile_main_view_list_view_model.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
-final class MobileMainView
-    extends StatefulWidget
-{
-  final MobileMainViewListViewModel mobileMainViewListViewModel;
-
-  const MobileMainView(this.mobileMainViewListViewModel);
-
+final class MobileMainView extends StatefulWidget {
   @override
   State<MobileMainView> createState() => _MobileMainViewState();
 }
 
-final class _MobileMainViewState
-    extends State<MobileMainView>
-{
+final class _MobileMainViewState extends State<MobileMainView> {
+  late final MobileMainViewListViewModel _mobileMainViewListViewModel;
+
   @override
   void initState() {
+    _mobileMainViewListViewModel = MobileMainViewListViewModel();
     super.initState();
+    _init();
   }
 
   @override
   void dispose() {
-    widget
-        .mobileMainViewListViewModel
-        .dispose();
+    _mobileMainViewListViewModel.dispose();
     super.dispose();
   }
 
@@ -60,4 +54,6 @@ final class _MobileMainViewState
         ),
       ),);
   }
+
+  void _init() {}
 }

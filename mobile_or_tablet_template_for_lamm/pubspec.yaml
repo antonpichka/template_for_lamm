@@ -3,8 +3,8 @@ version: 1.0.0+1
 publish_to: 'none'
 
 environment:
-  sdk: ">=3.0.0 <4.0.0"
-  flutter: 3.10.0
+  sdk: ">=3.1.0 <4.0.0"
+  flutter: 3.13.0
 
 dependencies:
   common_template_for_lamm:
@@ -13,14 +13,13 @@ dependencies:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
-  library_architecture_mvvm_modify: ^0.1.4
+  library_architecture_mvvm_modify: ^0.1.5
   intl: ^0.18.0
   responsive_framework: ^1.1.0
-  meta: ^1.8.0
-  cupertino_icons: ^1.0.2
+  meta: ^1.9.1
 
 dev_dependencies:
-  flutter_lints: ^2.0.1
+  flutter_lints: ^2.0.3
 
 flutter:
   uses-material-design: true

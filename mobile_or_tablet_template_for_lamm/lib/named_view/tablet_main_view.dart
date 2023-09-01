@@ -2,30 +2,23 @@ import 'package:flutter/material.dart';
 import 'package:mobile_or_tablet_template_for_lamm/named_view_list_view_model/tablet_main_view_list_view_model.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
-final class TabletMainView
-    extends StatefulWidget
-{
-  final TabletMainViewListViewModel tabletMainViewListViewModel;
-
-  const TabletMainView(this.tabletMainViewListViewModel);
-
+final class TabletMainView extends StatefulWidget {
   @override
   State<TabletMainView> createState() => _TabletMainViewState();
 }
 
-final class _TabletMainViewState
-    extends State<TabletMainView>
-{
+final class _TabletMainViewState extends State<TabletMainView> {
+  late final TabletMainViewListViewModel _tabletMainViewListViewModel;
+
   @override
   void initState() {
+    _tabletMainViewListViewModel = TabletMainViewListViewModel();
     super.initState();
   }
 
   @override
   void dispose() {
-    widget
-        .tabletMainViewListViewModel
-        .dispose();
+    _tabletMainViewListViewModel.dispose();
     super.dispose();
   }
 

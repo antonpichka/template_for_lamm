@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:web_template_for_lamm/l10n/l10n.dart';
-import 'package:web_template_for_lamm/named_view/main_view.dart';
 import 'package:web_template_for_lamm/named_utility/flutter_theme_utility.dart';
-import 'package:web_template_for_lamm/named_view_list_view_model/main_view_list_view_model.dart';
+import 'package:web_template_for_lamm/named_view/main_view.dart';
 
-final class AppView
-    extends StatelessWidget
-{
+final class AppView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -21,16 +18,16 @@ final class AppView
         localizationsDelegates: AppLocalizations.localizationsDelegates,
         supportedLocales: AppLocalizations.supportedLocales,
         builder: (context, widget) => ResponsiveBreakpoints.builder(
-          child: ClampingScrollWrapper.builder(context, widget!),
+          child: widget!,
           breakpoints: [
-            const Breakpoint(start: 0,end: 450, name: MOBILE),
-            const Breakpoint(start: 451,end: 999, name: TABLET),
-            const Breakpoint(start: 1000,end: double.infinity,name: DESKTOP),
+            const Breakpoint(start: 0, end: 599, name: MOBILE),
+            const Breakpoint(start: 600, end: 800, name: TABLET),
+            const Breakpoint(start: 801, end: double.infinity, name: DESKTOP),
           ],
         ),
         initialRoute: "/",
         routes: {
-          "/" : (context) =>  MainView(MainViewListViewModel())
+          "/" : (context) =>  MainView()
         });
   }
 }
