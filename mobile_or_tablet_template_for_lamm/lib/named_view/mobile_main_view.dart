@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:mobile_or_tablet_template_for_lamm/named_view_list_view_model/mobile_main_view_list_view_model.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
 final class MobileMainView extends StatefulWidget {
@@ -8,18 +7,18 @@ final class MobileMainView extends StatefulWidget {
 }
 
 final class _MobileMainViewState extends State<MobileMainView> {
-  late final MobileMainViewListViewModel _mobileMainViewListViewModel;
+  // late final MobileMainViewQViewModel _mobileMainViewQViewModel;
 
   @override
   void initState() {
-    _mobileMainViewListViewModel = MobileMainViewListViewModel();
+    // _mobileMainViewQViewModel = MobileMainViewQViewModel();
     super.initState();
-    _init();
+    // _init();
   }
 
   @override
   void dispose() {
-    _mobileMainViewListViewModel.dispose();
+    // _mobileMainViewQViewModel.dispose();
     super.dispose();
   }
 
@@ -55,17 +54,17 @@ final class _MobileMainViewState extends State<MobileMainView> {
       ),);
   }
 
-  Future<void> _init() async {
-    _mobileMainViewListViewModel
+ /* Future<void> _init() async {
+    _mobileMainViewQViewModel
         .getStreamDataForNamed
         .listen((event) {
           setState(() {});
         });
-    final result = await _mobileMainViewListViewModel.init();
+    final result = await _mobileMainViewQViewModel.init();
     debugPrint("MainView: $result");
     if(!mounted) {
       return;
     }
-    _mobileMainViewListViewModel.notifyStreamDataForNamed();
-  }
+    _mobileMainViewQViewModel.notifyStreamDataForNamed();
+  }*/
 }

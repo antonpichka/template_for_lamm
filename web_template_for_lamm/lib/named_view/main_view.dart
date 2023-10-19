@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_framework/responsive_framework.dart';
-import 'package:web_template_for_lamm/named_view_list_view_model/main_view_list_view_model.dart';
 
 final class MainView extends StatefulWidget {
   @override
@@ -8,18 +7,18 @@ final class MainView extends StatefulWidget {
 }
 
 final class _MainViewState extends State<MainView> {
-  late final MainViewListViewModel _mainViewListViewModel;
+  // late final MainViewQViewModel _mainViewQViewModel;
 
   @override
   void initState() {
-    _mainViewListViewModel = MainViewListViewModel();
+    // _mainViewQViewModel = MainViewQViewModel();
     super.initState();
-    _init();
+    // _init();
   }
 
   @override
   void dispose() {
-    _mainViewListViewModel.dispose();
+    // _mainViewQViewModel.dispose();
     super.dispose();
   }
 
@@ -73,17 +72,17 @@ final class _MainViewState extends State<MainView> {
         ));
   }
 
-  Future<void> _init() async {
-    _mainViewListViewModel
+ /* Future<void> _init() async {
+    _mainViewQViewModel
         .getStreamDataForNamed
         .listen((event) {
           setState(() {});
         });
-    final result = await _mainViewListViewModel.init();
+    final result = await _mainViewQViewModel.init();
     debugPrint("MainView: $result");
     if(!mounted) {
       return;
     }
-    _mainViewListViewModel.notifyStreamDataForNamed();
-  }
+    _mainViewQViewModel.notifyStreamDataForNamed();
+  }*/
 }

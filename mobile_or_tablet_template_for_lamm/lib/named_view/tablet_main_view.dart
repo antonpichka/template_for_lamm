@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:mobile_or_tablet_template_for_lamm/named_view_list_view_model/tablet_main_view_list_view_model.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
 final class TabletMainView extends StatefulWidget {
@@ -8,18 +7,18 @@ final class TabletMainView extends StatefulWidget {
 }
 
 final class _TabletMainViewState extends State<TabletMainView> {
-  late final TabletMainViewListViewModel _tabletMainViewListViewModel;
+  // late final TabletMainViewQViewModel _tabletMainViewQViewModel;
 
   @override
   void initState() {
-    _tabletMainViewListViewModel = TabletMainViewListViewModel();
+    // _tabletMainViewQViewModel = TabletMainViewQViewModel();
     super.initState();
-    _init();
+    // _init();
   }
 
   @override
   void dispose() {
-    _tabletMainViewListViewModel.dispose();
+    // _tabletMainViewQViewModel.dispose();
     super.dispose();
   }
 
@@ -55,17 +54,17 @@ final class _TabletMainViewState extends State<TabletMainView> {
       ),);
   }
 
-  Future<void> _init() async {
-    _tabletMainViewListViewModel
+  /*Future<void> _init() async {
+    _tabletMainViewQViewModel
         .getStreamDataForNamed
         .listen((event) {
           setState(() {});
         });
-    final result = await _tabletMainViewListViewModel.init();
+    final result = await _tabletMainViewQViewModel.init();
     debugPrint("MainView: $result");
     if(!mounted) {
       return;
     }
-    _tabletMainViewListViewModel.notifyStreamDataForNamed();
-  }
+    _tabletMainViewQViewModel.notifyStreamDataForNamed();
+  }*/
 }
