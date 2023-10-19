@@ -55,5 +55,17 @@ final class _MobileMainViewState extends State<MobileMainView> {
       ),);
   }
 
-  void _init() {}
+  Future<void> _init() async {
+    _mobileMainViewListViewModel
+        .getStreamDataForNamed
+        .listen((event) {
+          setState(() {});
+        });
+    final result = await _mobileMainViewListViewModel.init();
+    debugPrint("MainView: $result");
+    if(!mounted) {
+      return;
+    }
+    _mobileMainViewListViewModel.notifyStreamDataForNamed();
+  }
 }

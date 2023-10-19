@@ -2,5 +2,5 @@ import 'package:meta/meta.dart';
 
 @immutable
 final class AlgorithmsUtility {
-  AlgorithmsUtility._();
+  const AlgorithmsUtility._();
 }

@@ -30,7 +30,17 @@ final class _MainViewState extends State<MainView> {
     );
   }
 
-  void _init() {
-
+  Future<void> _init() async {
+    _mainViewListViewModel
+        .getStreamDataForNamed
+        .listen((event) {
+          setState(() {});
+        });
+    final result = await _mainViewListViewModel.init();
+    debugPrint("MainView: $result");
+    if(!mounted) {
+      return;
+    }
+    _mainViewListViewModel.notifyStreamDataForNamed();
   }
 }

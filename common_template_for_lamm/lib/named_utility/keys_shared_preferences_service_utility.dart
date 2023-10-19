@@ -6,5 +6,5 @@ final class KeysSharedPreferencesServiceUtility {
   static const String userQUniqueId = "userQUniqueId";
   static const String userQCreationTime = "userQCreationTime";
 
-  KeysSharedPreferencesServiceUtility._();
+  const KeysSharedPreferencesServiceUtility._();
 }

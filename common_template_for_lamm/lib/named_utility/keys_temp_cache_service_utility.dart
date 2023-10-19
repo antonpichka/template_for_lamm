@@ -9,5 +9,5 @@ final class KeysTempCacheServiceUtility {
   /* DatesTimes */
   static const String datesTimesQCreationTimeByUser = "datesTimesQCreationTimeByUser";
 
-  KeysTempCacheServiceUtility._();
+  const KeysTempCacheServiceUtility._();
 }

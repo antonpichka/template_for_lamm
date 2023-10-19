@@ -14,6 +14,7 @@ final class _TabletMainViewState extends State<TabletMainView> {
   void initState() {
     _tabletMainViewListViewModel = TabletMainViewListViewModel();
     super.initState();
+    _init();
   }
 
   @override
@@ -52,5 +53,19 @@ final class _TabletMainViewState extends State<TabletMainView> {
           ),
         ),
       ),);
+  }
+
+  Future<void> _init() async {
+    _tabletMainViewListViewModel
+        .getStreamDataForNamed
+        .listen((event) {
+          setState(() {});
+        });
+    final result = await _tabletMainViewListViewModel.init();
+    debugPrint("MainView: $result");
+    if(!mounted) {
+      return;
+    }
+    _tabletMainViewListViewModel.notifyStreamDataForNamed();
   }
 }

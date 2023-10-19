@@ -8,7 +8,7 @@ final class FlutterThemeUtility {
   static const Color darkBackgroundColor = Color.fromRGBO(18, 18, 18, 1.0);
   static const Color darkDividerColor = Color.fromRGBO(48, 48, 48, 1.0);
 
-  FlutterThemeUtility._();
+  const FlutterThemeUtility._();
 
   static ThemeData get dark {
     return ThemeData(

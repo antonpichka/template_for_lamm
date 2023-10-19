@@ -7,5 +7,5 @@ final class KeysExceptionUtility {
   /* Qw */
   static const String qwQGetStringWhereIsEmptyParameterUsername = "qwQGetStringWhereIsEmptyParameterUsername";
 
-  KeysExceptionUtility._();
+  const KeysExceptionUtility._();
 }

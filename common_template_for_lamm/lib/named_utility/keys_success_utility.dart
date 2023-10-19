@@ -5,5 +5,5 @@ final class KeysSuccessUtility {
   /* SUCCESS */
   static const String sUCCESS = "sUCCESS";
 
-  KeysSuccessUtility._();
+  const KeysSuccessUtility._();
 }

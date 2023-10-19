@@ -5,5 +5,5 @@ final class KeysHttpClientServiceUtility {
   /* Qw */
   static const String qwQId = "id";
 
-  KeysHttpClientServiceUtility._();
+  const KeysHttpClientServiceUtility._();
 }
