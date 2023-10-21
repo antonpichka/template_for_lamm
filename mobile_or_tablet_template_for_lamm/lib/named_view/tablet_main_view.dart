@@ -7,18 +7,18 @@ final class TabletMainView extends StatefulWidget {
 }
 
 final class _TabletMainViewState extends State<TabletMainView> {
-  // late final TabletMainViewQViewModel _tabletMainViewQViewModel;
+  // late final TabletMainViewModel _tabletMainViewModel;
 
   @override
   void initState() {
-    // _tabletMainViewQViewModel = TabletMainViewQViewModel();
+    // _tabletMainViewModel = TabletMainViewModel();
     super.initState();
     // _init();
   }
 
   @override
   void dispose() {
-    // _tabletMainViewQViewModel.dispose();
+    // _tabletMainViewModel.dispose();
     super.dispose();
   }
 
@@ -55,16 +55,16 @@ final class _TabletMainViewState extends State<TabletMainView> {
   }
 
   /*Future<void> _init() async {
-    _tabletMainViewQViewModel
-        .getStreamDataForNamed
+    _tabletMainViewModel
+        .getStreamDataForNamedParameterNamedStreamWState
         .listen((event) {
           setState(() {});
         });
-    final result = await _tabletMainViewQViewModel.init();
-    debugPrint("MainView: $result");
+    final result = await _tabletMainViewModel.init();
+    debugPrint("TabletMainView: $result");
     if(!mounted) {
       return;
     }
-    _tabletMainViewQViewModel.notifyStreamDataForNamed();
+    _tabletMainViewModel.notifyStreamDataForNamedParameterNamedStreamWState();
   }*/
 }
