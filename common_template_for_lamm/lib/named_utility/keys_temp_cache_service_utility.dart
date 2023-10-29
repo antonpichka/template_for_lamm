@@ -3,11 +3,11 @@ import 'package:meta/meta.dart';
 @immutable
 final class KeysTempCacheServiceUtility {
   /* Strings */
-  static const String stringsQUniqueIdByUser = "stringsQUniqueIdByUser";
+  static const String stringsQQUniqueIdByUser = "stringsQQUniqueIdByUser";
   /* Ints */
-  static const String intsQSeasonNumberBySeason = "intsQSeasonNumberBySeason";
+  static const String intsQQSeasonNumberBySeason = "intsQQSeasonNumberBySeason";
   /* DatesTimes */
-  static const String datesTimesQCreationTimeByUser = "datesTimesQCreationTimeByUser";
+  static const String datesTimesQQCreationTimeByUser = "datesTimesQQCreationTimeByUser";
 
   const KeysTempCacheServiceUtility._();
 }
