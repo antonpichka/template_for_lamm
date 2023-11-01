@@ -13,7 +13,7 @@ final class _MobileMainViewState extends State<MobileMainView> {
   void initState() {
     // _mobileMainViewModel = MobileMainViewModel();
     super.initState();
-    // _init();
+    // _initParameterMobileMainViewModel();
   }
 
   @override
@@ -54,7 +54,7 @@ final class _MobileMainViewState extends State<MobileMainView> {
       ),);
   }
 
- /* Future<void> _init() async {
+ /* Future<void> _initParameterMobileMainViewModel() async {
     _mobileMainViewModel
         .getStreamDataForNamedParameterNamedStreamWState
         .listen((event) {

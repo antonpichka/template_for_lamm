@@ -13,7 +13,7 @@ final class _TabletMainViewState extends State<TabletMainView> {
   void initState() {
     // _tabletMainViewModel = TabletMainViewModel();
     super.initState();
-    // _init();
+    // _initParameterTabletMainViewModel();
   }
 
   @override
@@ -54,7 +54,7 @@ final class _TabletMainViewState extends State<TabletMainView> {
       ),);
   }
 
-  /*Future<void> _init() async {
+  /*Future<void> _initParameterTabletMainViewModel() async {
     _tabletMainViewModel
         .getStreamDataForNamedParameterNamedStreamWState
         .listen((event) {

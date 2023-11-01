@@ -13,7 +13,7 @@ final class _MainViewState extends State<MainView> {
   void initState() {
     // _mainViewModel = MainViewModel();
     super.initState();
-    // _init();
+    // _initParameterMainViewModel();
   }
 
   @override
@@ -24,24 +24,24 @@ final class _MainViewState extends State<MainView> {
 
   @override
   Widget build(BuildContext context) {
-    final text = ResponsiveValue<String>(
+    final value = ResponsiveValue<String>(
       context,
       defaultValue: "Hello World TABLET",
       conditionalValues: [
+        Condition.equals(name: MOBILE, value: "Hello World MOBILE"),
         Condition.equals(name: TABLET, value: "Hello World TABLET"),
-        Condition.largerThan(name: TABLET, value: "Hello World DESKTOP"),
-        Condition.smallerThan(name: TABLET, value: "Hello World MOBILE")
+        Condition.equals(name: DESKTOP, value: "Hello World DESKTOP"),
       ],
-    ).value;
-    final textSize = ResponsiveValue<double>(
+    ).value ?? "";
+    final valueFIRST = ResponsiveValue<double>(
       context,
       defaultValue: 24.0,
       conditionalValues: [
+        Condition.equals(name: MOBILE, value: 14.0),
         Condition.equals(name: TABLET, value: 24.0),
-        Condition.largerThan(name: TABLET, value: 40.0),
-        Condition.smallerThan(name: TABLET, value: 14.0)
+        Condition.equals(name: DESKTOP, value: 40.0),
       ],
-    ).value;
+    ).value ?? 0.0;
     return Scaffold(
         body: Align(
           alignment: Alignment.center,
@@ -49,9 +49,9 @@ final class _MainViewState extends State<MainView> {
             mainAxisSize: MainAxisSize.min,
             children: [
               SelectableText(
-                text ?? "",
+                value,
                 style: TextStyle(
-                  fontSize: textSize,
+                  fontSize: valueFIRST,
                   fontWeight: FontWeight.w400,
                   letterSpacing: 1.8,
                 ),
@@ -59,10 +59,10 @@ final class _MainViewState extends State<MainView> {
               ElevatedButton(
                   onPressed: null,
                   child: Text(
-                    text ?? "",
+                    value,
                     style: TextStyle(
                       color: Theme.of(context).textTheme.bodyMedium?.color,
-                      fontSize: textSize,
+                      fontSize: valueFIRST,
                       fontWeight: FontWeight.w400,
                       letterSpacing: 1.8,
                     ),
@@ -72,17 +72,17 @@ final class _MainViewState extends State<MainView> {
         ));
   }
 
- /* Future<void> _init() async {
+ /* Future<void> _initParameterMainViewModel() async {
     _mainViewModel
         .getStreamDataForNamedParameterNamedStreamWState
         .listen((event) {
           setState(() {});
         });
-    final result = await _mainViewQViewModel.init();
+    final result = await _mainViewModel.init();
     debugPrint("MainView: $result");
     if(!mounted) {
       return;
     }
-    _mainViewQViewModel.notifyStreamDataForNamedParameterNamedStreamWState();
+    _mainViewModel.notifyStreamDataForNamedParameterNamedStreamWState();
   }*/
 }

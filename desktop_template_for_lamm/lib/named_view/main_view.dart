@@ -12,7 +12,7 @@ final class _MainViewState extends State<MainView> {
   void initState() {
     // _mainViewModel = MainViewModel();
     super.initState();
-    // _init();
+    // _initParameterMainViewModel();
   }
 
   @override
@@ -29,7 +29,7 @@ final class _MainViewState extends State<MainView> {
     );
   }
 
- /* Future<void> _init() async {
+ /* Future<void> _initParameterMainViewModel() async {
     _mainViewModel
         .getStreamDataForNamedParameterNamedStreamWState
         .listen((event) {
