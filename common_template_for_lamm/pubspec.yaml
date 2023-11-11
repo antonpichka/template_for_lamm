@@ -6,7 +6,7 @@ environment:
   sdk: ">=3.0.0 <4.0.0"
 
 dependencies:
-  library_architecture_mvvm_modify: ^0.2.8
+  library_architecture_mvvm_modify: ^0.2.9
   meta: ^1.9.1
 
 dev_dependencies:
