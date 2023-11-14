@@ -1,43 +1,55 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
+@immutable
 final class FlutterThemeUtility {
-  static const Color darkPrimaryColor = Color.fromRGBO(64, 64, 64, 1.0);
-  static const Color darkSecondaryColor = Color.fromRGBO(255, 85, 0, 1.0);
-  static const Color darkSurfaceColor = Color.fromRGBO(31, 31, 31, 1.0);
-  static const Color darkAppBarBackgroundColor = Color.fromRGBO(22, 22, 22, 1.0);
-  static const Color darkBackgroundColor = Color.fromRGBO(18, 18, 18, 1.0);
-  static const Color darkDividerColor = Color.fromRGBO(48, 48, 48, 1.0);
+  static const Color seedColor = Color.fromRGBO(13, 17, 23,1.0);
+  static const Color seedColorFIRST = Color.fromRGBO(26, 29, 34,1.0);
+  static const Color discordLogoColor = Color.fromRGBO(88, 101, 242,1.0);
 
   const FlutterThemeUtility._();
+
+  static ThemeData get light {
+    return ThemeData(
+      useMaterial3: true,
+      colorScheme: ColorScheme.fromSeed(
+        brightness: Brightness.light,
+        seedColor: seedColor,
+      ),
+      textTheme: TextTheme(
+        displayLarge: const TextStyle(
+          fontSize: 72,
+          fontWeight: FontWeight.bold,
+        ),
+        titleLarge: GoogleFonts.oswald(
+          fontSize: 30,
+          fontStyle: FontStyle.italic,
+        ),
+        bodyMedium: GoogleFonts.merriweather(),
+        displaySmall: GoogleFonts.pacifico(),
+      ),
+    );
+  }
 
   static ThemeData get dark {
     return ThemeData(
       useMaterial3: true,
-      dividerColor: darkDividerColor,
-      appBarTheme: const AppBarTheme(
-        elevation: 1.0,
-        scrolledUnderElevation: 0,
-        backgroundColor: darkAppBarBackgroundColor,
-        titleTextStyle: TextStyle(color: Colors.white),
-        iconTheme: IconThemeData(
-            color: Colors.white60,
-            size: 40
-        ),
-      ),
-      colorScheme: const ColorScheme(
+      colorScheme: ColorScheme.fromSeed(
         brightness: Brightness.dark,
-        primary: darkPrimaryColor,
-        onPrimary: darkPrimaryColor,
-        secondary: darkSecondaryColor,
-        onSecondary: darkSecondaryColor,
-        surface: darkSurfaceColor,
-        onSurface: darkSurfaceColor,
-        background: darkBackgroundColor,
-        onBackground: darkBackgroundColor,
-        error: Colors.red,
-        onError: Colors.red,
+        seedColor: seedColor,
       ),
-      textTheme: Typography.material2021().white,
+      textTheme: TextTheme(
+        displayLarge: const TextStyle(
+          fontSize: 72,
+          fontWeight: FontWeight.bold,
+        ),
+        titleLarge: GoogleFonts.oswald(
+          fontSize: 30,
+          fontStyle: FontStyle.italic,
+        ),
+        bodyMedium: GoogleFonts.merriweather(),
+        displaySmall: GoogleFonts.pacifico(),
+      ),
     );
   }
 }
