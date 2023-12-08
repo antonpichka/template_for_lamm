@@ -9,23 +9,23 @@ final class MainView extends StatefulWidget {
 
 final class _MainViewState extends State<MainView> {
   /// RELEASE CODE
-  // late final MainViewModel _mainViewModel;
+  // late final MainViewModel _viewModel;
   /// TEST CODE
-  late final TestMainViewModel _mainViewModel;
+  late final TestMainViewModel _viewModel;
 
   @override
   void initState() {
     /// RELEASE CODE
-    // _mainViewModel = MainViewModel();
+    // _viewModel = MainViewModel();
     /// TEST CODE
-    _mainViewModel = TestMainViewModel();
+    _viewModel = TestMainViewModel();
     super.initState();
-    _initParameterMainViewModel();
+    _initParameterViewModel();
   }
 
   @override
   void dispose() {
-    _mainViewModel.dispose();
+    _viewModel.dispose();
     super.dispose();
   }
 
@@ -77,17 +77,17 @@ final class _MainViewState extends State<MainView> {
         ));
   }
 
-  Future<void> _initParameterMainViewModel() async {
-    _mainViewModel
+  Future<void> _initParameterViewModel() async {
+    _viewModel
         .getStreamDataForNamedParameterNamedStreamWState
         .listen((event) {
           setState(() {});
         });
-    final result = await _mainViewModel.init();
+    final result = await _viewModel.init();
     debugPrint("MainView: $result");
     if(!mounted) {
       return;
     }
-    _mainViewModel.notifyStreamDataForNamedParameterNamedStreamWState();
+    _viewModel.notifyStreamDataForNamedParameterNamedStreamWState();
   }
 }

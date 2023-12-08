@@ -8,10 +8,14 @@ import 'package:desktop_template_for_lamm/named_vm/app_vm/i_app_view_model.dart'
 final class TestAppViewModel extends BaseNamedViewModel<DataForAppView,DefaultStreamWState<DataForAppView>>
     implements IAppViewModel
 {
-  TestAppViewModel() : super(DefaultStreamWState(DataForAppView(false)));
+  // OperationEEModel(EEWhereNamed)[EEFromNamed]EEParameterNamedService
+  // NamedUtility
+
+  TestAppViewModel() : super(DefaultStreamWState(DataForAppView(true)));
 
   @override
   Future<String> init() async {
+    getDataForNamedParameterNamedStreamWState.isLoading = false;
     return KeysSuccessUtility.sUCCESS;
   }
 }

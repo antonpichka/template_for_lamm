@@ -8,10 +8,14 @@ import 'package:mobile_or_tablet_template_for_lamm/named_vm/tablet_main_vm/i_tab
 final class TabletMainViewModel extends BaseNamedViewModel<DataForTabletMainView,DefaultStreamWState<DataForTabletMainView>>
     implements ITabletMainViewModel
 {
-  TabletMainViewModel() : super(DefaultStreamWState(DataForTabletMainView(false)));
+  // OperationEEModel(EEWhereNamed)[EEFromNamed]EEParameterNamedService
+  // NamedUtility
+
+  TabletMainViewModel() : super(DefaultStreamWState(DataForTabletMainView(true)));
 
   @override
   Future<String> init() async {
+    getDataForNamedParameterNamedStreamWState.isLoading = false;
     return KeysSuccessUtility.sUCCESS;
   }
 }

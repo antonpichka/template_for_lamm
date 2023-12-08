@@ -8,10 +8,14 @@ import 'package:mobile_or_tablet_template_for_lamm/named_vm/mobile_main_vm/i_mob
 final class TestMobileMainViewModel extends BaseNamedViewModel<DataForMobileMainView,DefaultStreamWState<DataForMobileMainView>>
     implements IMobileMainViewModel
 {
-  TestMobileMainViewModel() : super(DefaultStreamWState(DataForMobileMainView(false)));
+  // OperationEEModel(EEWhereNamed)[EEFromNamed]EEParameterNamedService
+  // NamedUtility
+
+  TestMobileMainViewModel() : super(DefaultStreamWState(DataForMobileMainView(true)));
 
   @override
   Future<String> init() async {
+    getDataForNamedParameterNamedStreamWState.isLoading = false;
     return KeysSuccessUtility.sUCCESS;
   }
 }

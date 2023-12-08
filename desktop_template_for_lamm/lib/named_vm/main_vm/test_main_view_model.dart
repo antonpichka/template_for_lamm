@@ -8,10 +8,14 @@ import 'package:meta/meta.dart';
 final class TestMainViewModel extends BaseNamedViewModel<DataForMainView,DefaultStreamWState<DataForMainView>>
     implements IMainViewModel
 {
-  TestMainViewModel() : super(DefaultStreamWState(DataForMainView(false)));
+  // OperationEEModel(EEWhereNamed)[EEFromNamed]EEParameterNamedService
+  // NamedUtility
+
+  TestMainViewModel() : super(DefaultStreamWState(DataForMainView(true)));
 
   @override
   Future<String> init() async {
+    getDataForNamedParameterNamedStreamWState.isLoading = false;
     return KeysSuccessUtility.sUCCESS;
   }
 }

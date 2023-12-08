@@ -4,7 +4,6 @@ import 'package:google_fonts/google_fonts.dart';
 @immutable
 final class FlutterThemeUtility {
   static const Color seedColor = Color.fromRGBO(13, 17, 23,1.0);
-  static const Color seedColorFIRST = Color.fromRGBO(26, 29, 34,1.0);
   static const Color discordLogoColor = Color.fromRGBO(88, 101, 242,1.0);
 
   const FlutterThemeUtility._();

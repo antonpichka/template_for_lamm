@@ -9,23 +9,23 @@ final class MobileMainView extends StatefulWidget {
 
 final class _MobileMainViewState extends State<MobileMainView> {
   /// RELEASE CODE
-  // late final MobileMainViewModel _mobileMainViewModel;
+  // late final MobileMainViewModel _viewModel;
   /// TEST CODE
-  late final TestMobileMainViewModel _mobileMainViewModel;
+  late final TestMobileMainViewModel _viewModel;
 
   @override
   void initState() {
     /// RELEASE CODE
-    // _mobileMainViewModel = MobileMainViewModel();
+    // _viewModel = MobileMainViewModel();
     /// TEST CODE
-    _mobileMainViewModel = TestMobileMainViewModel();
+    _viewModel = TestMobileMainViewModel();
     super.initState();
-    _initParameterMobileMainViewModel();
+    _initParameterViewModel();
   }
 
   @override
   void dispose() {
-    _mobileMainViewModel.dispose();
+    _viewModel.dispose();
     super.dispose();
   }
 
@@ -62,17 +62,17 @@ final class _MobileMainViewState extends State<MobileMainView> {
     );
   }
 
-  Future<void> _initParameterMobileMainViewModel() async {
-    _mobileMainViewModel
+  Future<void> _initParameterViewModel() async {
+    _viewModel
         .getStreamDataForNamedParameterNamedStreamWState
         .listen((event) {
           setState(() {});
         });
-    final result = await _mobileMainViewModel.init();
+    final result = await _viewModel.init();
     debugPrint("MobileMainView: $result");
     if(!mounted) {
       return;
     }
-    _mobileMainViewModel.notifyStreamDataForNamedParameterNamedStreamWState();
+    _viewModel.notifyStreamDataForNamedParameterNamedStreamWState();
   }
 }

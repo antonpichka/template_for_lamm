@@ -3,8 +3,8 @@ version: 1.0.0+1
 publish_to: 'none'
 
 environment:
-  sdk: ">=3.1.5 <4.0.0"
-  flutter: 3.13.9
+  sdk: ">=3.2.2 <4.0.0"
+  flutter: 3.16.2
 
 dependencies:
   common_template_for_lamm:
@@ -13,9 +13,9 @@ dependencies:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
-  library_architecture_mvvm_modify: ^0.2.9
+  library_architecture_mvvm_modify: ^0.3.1
   intl: ^0.18.0
-  meta: ^1.9.1
+  meta: ^1.10.0
   google_fonts: ^6.1.0
 
 dev_dependencies:

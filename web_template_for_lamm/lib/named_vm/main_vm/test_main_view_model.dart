@@ -8,10 +8,14 @@ import 'package:web_template_for_lamm/named_vm/main_vm/i_main_view_model.dart';
 final class TestMainViewModel extends BaseNamedViewModel<DataForMainView,DefaultStreamWState<DataForMainView>>
     implements IMainViewModel
 {
-  TestMainViewModel() : super(DefaultStreamWState(DataForMainView(false)));
+  // OperationEEModel(EEWhereNamed)[EEFromNamed]EEParameterNamedService
+  // NamedUtility
+
+  TestMainViewModel() : super(DefaultStreamWState(DataForMainView(true)));
 
   @override
   Future<String> init() async {
+    getDataForNamedParameterNamedStreamWState.isLoading = false;
     return KeysSuccessUtility.sUCCESS;
   }
 }

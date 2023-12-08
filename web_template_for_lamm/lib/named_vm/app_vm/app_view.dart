@@ -13,23 +13,23 @@ final class AppView extends StatefulWidget {
 
 final class _AppViewState extends State<AppView> {
   /// RELEASE CODE
-  // late final AppViewModel _appViewModel;
+  // late final AppViewModel _viewModel;
   /// TEST CODE
-  late final TestAppViewModel _appViewModel;
+  late final TestAppViewModel _viewModel;
 
   @override
   void initState() {
     /// RELEASE CODE
-    // _appViewModel = AppViewModel();
+    // _viewModel = AppViewModel();
     /// TEST CODE
-    _appViewModel = TestAppViewModel();
+    _viewModel = TestAppViewModel();
     super.initState();
-    _initParameterAppViewModel();
+    _initParameterViewModel();
   }
 
   @override
   void dispose() {
-    _appViewModel.dispose();
+    _viewModel.dispose();
     super.dispose();
   }
 
@@ -54,19 +54,19 @@ final class _AppViewState extends State<AppView> {
         routerConfig: _getRouterConfigParameterAppViewModel);
   }
 
-  Future<void> _initParameterAppViewModel()
+  Future<void> _initParameterViewModel()
   async {
-    _appViewModel
+    _viewModel
         .getStreamDataForNamedParameterNamedStreamWState
         .listen((event) {
           setState(() {});
         });
-    final result = await _appViewModel.init();
+    final result = await _viewModel.init();
     debugPrint("AppView: $result");
     if(!mounted) {
       return;
     }
-    _appViewModel.notifyStreamDataForNamedParameterNamedStreamWState();
+    _viewModel.notifyStreamDataForNamedParameterNamedStreamWState();
   }
 
   /// import 'dart:html' as html; (html.window.history.pushState(null,'',"#/top_players"))
