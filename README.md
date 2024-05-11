@@ -10,8 +10,7 @@
 
 - [common_template_for_lamm](https://github.com/antonpichka/template_for_lamm#common_template_for_lamm)
 - [desktop_template_for_lamm](https://github.com/antonpichka/template_for_lamm#desktop_template_for_lamm)
-- [mobile_or_tablet_template_for_lamm](https://github.com/antonpichka/template_for_lamm#mobile_or_tablet_template_for_lamm)
-- [web_template_for_lamm](https://github.com/antonpichka/template_for_lamm#web_template_for_lamm)
+- [mobile_w_tablet_template_for_lamm](https://github.com/antonpichka/template_for_lamm#mobile_w_tablet_template_for_lamm)
 
 ### common_template_for_lamm
 
@@ -34,29 +33,16 @@
 - - cd desktop_${your_name}
 - - flutter create --org ${example_com.antonpichka} --template=app --platforms=windows,macos,linux .
 
-### mobile_or_tablet_template_for_lamm
+### mobile_w_tablet_template_for_lamm
 
-- If you need to change the application name from 'mobile_or_tablet_template_for_lamm' to 'mobile_or_tablet_${your_name}':
-- - 'mobile_or_tablet_template_for_lamm/pubspec.yaml':
-- - - 'name: mobile_or_tablet_template_for_lamm' to 'name: mobile_or_tablet_${your_name}'
+- If you need to change the application name from 'mobile_w_tablet_template_for_lamm' to 'mobile_w_tablet_${your_name}':
+- - 'mobile_w_tablet_template_for_lamm/pubspec.yaml':
+- - - 'name: mobile_w_tablet_template_for_lamm' to 'name: mobile_w_tablet_${your_name}'
 
 - Delete directories:
 - - android
 - - ios
 
 - Commands:
-- - cd mobile_or_tablet_${your_name}
+- - cd mobile_w_tablet_${your_name}
 - - flutter create --org ${example_com.antonpichka} --template=app --platforms=android,ios .
-
-### web_template_for_lamm
-
-- If you need to change the application name from 'web_template_for_lamm' to 'web_${your_name}':
-- - 'web_template_for_lamm/pubspec.yaml':
-- - - 'name: web_template_for_lamm' to 'name: web_${your_name}'
-
-- Delete directories:
-- - web
-
-- Commands:
-- - cd web_${your_name}
-- - flutter create --org ${example_com.antonpichka} --template=app --platforms=web .
