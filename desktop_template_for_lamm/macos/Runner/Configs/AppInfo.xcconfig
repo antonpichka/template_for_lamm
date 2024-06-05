@@ -8,7 +8,7 @@
 PRODUCT_NAME = desktop_template_for_lamm
 
 // The application's bundle identifier
-PRODUCT_BUNDLE_IDENTIFIER = com.antonpichka.desktopTemplateForLamm
+PRODUCT_BUNDLE_IDENTIFIER = com.desktoptemplateforlamm.desktopTemplateForLamm
 
 // The copyright displayed in application information
-PRODUCT_COPYRIGHT = Copyright © 2023 com.antonpichka. All rights reserved.
+PRODUCT_COPYRIGHT = Copyright © 2024 com.desktop_template_for_lamm. All rights reserved.

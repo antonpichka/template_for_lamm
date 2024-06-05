@@ -1,5 +1,4 @@
 - https://github.com/antonpichka/library_architecture_mvvm_modify/tree/main/package#architectural-objects
-- https://github.com/antonpichka/library_architecture_mvvm_modify/blob/main/package/example/lib/main.dart
 - https://github.com/antonpichka/library_architecture_mvvm_modify/labels
 
 ---
@@ -10,7 +9,7 @@
 
 - [common_template_for_lamm](https://github.com/antonpichka/template_for_lamm#common_template_for_lamm)
 - [desktop_template_for_lamm](https://github.com/antonpichka/template_for_lamm#desktop_template_for_lamm)
-- [mobile_w_tablet_template_for_lamm](https://github.com/antonpichka/template_for_lamm#mobile_w_tablet_template_for_lamm)
+- [mobile_template_for_lamm](https://github.com/antonpichka/template_for_lamm#mobile_template_for_lamm)
 
 ### common_template_for_lamm
 
@@ -31,18 +30,18 @@
 
 - Commands:
 - - cd desktop_${your_name}
-- - flutter create --org ${example_com.antonpichka} --template=app --platforms=windows,macos,linux .
+- - flutter create --org com.desktop_template_for_lamm --template=app --platforms=windows,macos,linux .
 
-### mobile_w_tablet_template_for_lamm
+### mobile_template_for_lamm
 
-- If you need to change the application name from 'mobile_w_tablet_template_for_lamm' to 'mobile_w_tablet_${your_name}':
-- - 'mobile_w_tablet_template_for_lamm/pubspec.yaml':
-- - - 'name: mobile_w_tablet_template_for_lamm' to 'name: mobile_w_tablet_${your_name}'
+- If you need to change the application name from 'mobile_template_for_lamm' to 'mobile_${your_name}':
+- - 'mobile_template_for_lamm/pubspec.yaml':
+- - - 'name: mobile_template_for_lamm' to 'name: mobile_${your_name}'
 
 - Delete directories:
 - - android
 - - ios
 
 - Commands:
-- - cd mobile_w_tablet_${your_name}
-- - flutter create --org ${example_com.antonpichka} --template=app --platforms=android,ios .
+- - cd mobile_${your_name}
+- - flutter create --org com.mobile_template_for_lamm --template=app --platforms=android,ios .

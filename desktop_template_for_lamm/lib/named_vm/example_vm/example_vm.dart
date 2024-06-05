@@ -1,7 +1,7 @@
 import 'package:common_template_for_lamm/named_utility/keys_success_utility.dart';
+import 'package:library_architecture_mvvm_modify/library_architecture_mvvm_modify.dart' as lamm;
 import 'package:desktop_template_for_lamm/named_vm/example_vm/data_for_example_vm.dart';
 import 'package:desktop_template_for_lamm/named_vm/example_vm/enum_data_for_example_vm.dart';
-import 'package:library_architecture_mvvm_modify/library_architecture_mvvm_modify.dart' as lamm;
 import 'package:flutter/material.dart';
 
 final class ExampleVM extends StatefulWidget {
@@ -19,22 +19,16 @@ final class _ExampleVMState extends State<ExampleVM> {
 
   @override
   void initState() {
-    _namedStreamWState =
-        lamm.DefaultStreamWState(DataForExampleVM(true));
-    super.initState();
-    _rwtMode = lamm.RWTMode(lamm.EnumRWTMode.test,
+    _namedStreamWState = lamm.DefaultStreamWState<DataForExampleVM>(DataForExampleVM(true));
+    _rwtMode = lamm.RWTMode(
+        lamm.EnumRWTMode.test,
         [
-          lamm.NamedCallback("init", () async {
-            _namedStreamWState.getDataForNamed.isLoading = false;
-            return KeysSuccessUtility.sUCCESS;
-          }),
+          lamm.NamedCallback("init", _initReleaseCallback),
         ],
         [
-          lamm.NamedCallback("init", () async {
-            _namedStreamWState.getDataForNamed.isLoading = false;
-            return KeysSuccessUtility.sUCCESS;
-          })
+          lamm.NamedCallback("init", _initTestCallback)
         ]);
+    super.initState();
     _init();
   }
 
@@ -62,18 +56,28 @@ final class _ExampleVMState extends State<ExampleVM> {
   }
 
   Future<void> _init() async {
-    _namedStreamWState
-        .getStreamDataForNamed
-        .listen((event) {
-          setState(() {});
-        });
-    final result = await _rwtMode
+    _namedStreamWState.listenStreamDataForNamedFromCallback((event) {
+      setState(() {});
+    });
+    final callback = await _rwtMode
         .getNamedCallbackFromName("init")
         .callback();
-    lamm.debugPrint("ExampleVM: $result");
+    lamm.debugPrint("ExampleVM: $callback");
     if(!mounted) {
       return;
     }
     _namedStreamWState.notifyStreamDataForNamed();
+  }
+
+  Future<String> _initReleaseCallback() async {
+    await Future.delayed(const Duration(seconds: 1));
+    _namedStreamWState.getDataForNamed.isLoading = false;
+    return KeysSuccessUtility.sUCCESS;
+  }
+
+  Future<String> _initTestCallback() async {
+    await Future.delayed(const Duration(seconds: 1));
+    _namedStreamWState.getDataForNamed.isLoading = false;
+    return KeysSuccessUtility.sUCCESS;
   }
 }

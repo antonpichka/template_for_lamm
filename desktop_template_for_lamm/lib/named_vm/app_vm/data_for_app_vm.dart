@@ -14,4 +14,10 @@ final class DataForAppVM extends BaseDataForNamed<EnumDataForAppVM> {
     }
     return EnumDataForAppVM.success;
   }
+
+  @override
+  String toString() {
+    return "DataForAppVM(isLoading: $isLoading, "
+        "exceptionController: $exceptionController)";
+  }
 }

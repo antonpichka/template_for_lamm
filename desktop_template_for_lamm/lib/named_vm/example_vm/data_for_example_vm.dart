@@ -14,4 +14,10 @@ final class DataForExampleVM extends BaseDataForNamed<EnumDataForExampleVM> {
     }
     return EnumDataForExampleVM.success;
   }
+
+  @override
+  String toString() {
+    return "DataForExampleVM(isLoading: $isLoading, "
+        "exceptionController: $exceptionController)";
+  }
 }

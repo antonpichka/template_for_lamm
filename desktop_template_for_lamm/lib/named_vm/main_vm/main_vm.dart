@@ -19,22 +19,16 @@ final class _MainVMState extends State<MainVM> {
 
   @override
   void initState() {
-    _namedStreamWState =
-        lamm.DefaultStreamWState(DataForMainVM(true));
-    super.initState();
-    _rwtMode = lamm.RWTMode(lamm.EnumRWTMode.test,
+    _namedStreamWState = lamm.DefaultStreamWState<DataForMainVM>(DataForMainVM(true));
+    _rwtMode = lamm.RWTMode(
+        lamm.EnumRWTMode.test,
         [
-          lamm.NamedCallback("init", () async {
-            _namedStreamWState.getDataForNamed.isLoading = false;
-            return KeysSuccessUtility.sUCCESS;
-          }),
+          lamm.NamedCallback("init", _initReleaseCallback),
         ],
         [
-          lamm.NamedCallback("init", () async {
-            _namedStreamWState.getDataForNamed.isLoading = false;
-            return KeysSuccessUtility.sUCCESS;
-          })
+          lamm.NamedCallback("init", _initTestCallback)
         ]);
+    super.initState();
     _init();
   }
 
@@ -62,18 +56,28 @@ final class _MainVMState extends State<MainVM> {
   }
 
   Future<void> _init() async {
-    _namedStreamWState
-        .getStreamDataForNamed
-        .listen((event) {
-          setState(() {});
-        });
-    final result = await _rwtMode
+    _namedStreamWState.listenStreamDataForNamedFromCallback((event) {
+      setState(() {});
+    });
+    final callback = await _rwtMode
         .getNamedCallbackFromName("init")
         .callback();
-    lamm.debugPrint("MainVM: $result");
+    lamm.debugPrint("MainVM: $callback");
     if(!mounted) {
       return;
     }
     _namedStreamWState.notifyStreamDataForNamed();
+  }
+
+  Future<String> _initReleaseCallback() async {
+    await Future.delayed(const Duration(seconds: 1));
+    _namedStreamWState.getDataForNamed.isLoading = false;
+    return KeysSuccessUtility.sUCCESS;
+  }
+
+  Future<String> _initTestCallback() async {
+    await Future.delayed(const Duration(seconds: 1));
+    _namedStreamWState.getDataForNamed.isLoading = false;
+    return KeysSuccessUtility.sUCCESS;
   }
 }
