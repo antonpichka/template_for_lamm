@@ -30,7 +30,7 @@
 
 - Commands:
 - - cd desktop_${your_name}
-- - flutter create --org com.desktop_template_for_lamm --template=app --platforms=windows,macos,linux .
+- - flutter create --org com --template=app --platforms=windows,macos,linux .
 
 ### mobile_template_for_lamm
 
@@ -44,4 +44,4 @@
 
 - Commands:
 - - cd mobile_${your_name}
-- - flutter create --org com.mobile_template_for_lamm --template=app --platforms=android,ios .
+- - flutter create --org com --template=app --platforms=android,ios .

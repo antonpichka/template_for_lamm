@@ -1,4 +1,4 @@
-import 'package:common_template_for_lamm/named_utility/constants_utility.dart';
+import 'package:common_template_for_lamm/named_utility/ready_data_utility.dart';
 import 'package:mobile_template_for_lamm/named_vm/example_vm/data_for_example_vm.dart';
 import 'package:mobile_template_for_lamm/named_vm/example_vm/enum_data_for_example_vm.dart';
 import 'package:library_architecture_mvvm_modify/library_architecture_mvvm_modify.dart' as lamm;
@@ -61,6 +61,6 @@ final class _ExampleVMState extends State<ExampleVM> {
   Future<String> _firstRequest() async {
     await Future.delayed(const Duration(seconds: 1));
     _namedStreamWState.getDataForNamed.isLoading = false;
-    return ConstantsUtility.success;
+    return ReadyDataUtility.success;
   }
 }

@@ -1,4 +1,4 @@
-import 'package:common_template_for_lamm/named_utility/constants_utility.dart';
+import 'package:common_template_for_lamm/named_utility/ready_data_utility.dart';
 import 'package:flutter/material.dart';
 import 'package:library_architecture_mvvm_modify/library_architecture_mvvm_modify.dart' as lamm;
 import 'package:mobile_template_for_lamm/named_vm/tablet_main_vm/data_for_tablet_main_vm.dart';
@@ -86,6 +86,6 @@ final class _TabletMainVMState extends State<TabletMainVM> {
   Future<String> _firstRequest() async {
     await Future.delayed(const Duration(seconds: 1));
     _namedStreamWState.getDataForNamed.isLoading = false;
-    return ConstantsUtility.success;
+    return ReadyDataUtility.success;
   }
 }
