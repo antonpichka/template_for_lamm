@@ -1,4 +1,4 @@
-import 'package:common_template_for_lamm/named_utility/keys_success_utility.dart';
+import 'package:common_template_for_lamm/named_utility/constants_utility.dart';
 import 'package:flutter/material.dart';
 import 'package:library_architecture_mvvm_modify/library_architecture_mvvm_modify.dart' as lamm;
 import 'package:mobile_template_for_lamm/named_vm/tablet_main_vm/data_for_tablet_main_vm.dart';
@@ -11,24 +11,15 @@ final class TabletMainVM extends StatefulWidget {
 }
 
 final class _TabletMainVMState extends State<TabletMainVM> {
-  // OperationEEModel(EEWhereNamed)[EEFromNamed]EEParameterNamedService
+  // ModelRepository
   // NamedUtility
 
-  // Main objects
+  // NamedStreamWState
   late final lamm.BaseNamedStreamWState<DataForTabletMainVM> _namedStreamWState;
-  late final lamm.RWTMode _rwtMode;
 
   @override
   void initState() {
     _namedStreamWState = lamm.DefaultStreamWState<DataForTabletMainVM>(DataForTabletMainVM(true));
-    _rwtMode = lamm.RWTMode(
-        lamm.EnumRWTMode.test,
-        [
-          lamm.NamedCallback("init", _initReleaseCallback),
-        ],
-        [
-          lamm.NamedCallback("init", _initTestCallback)
-        ]);
     super.initState();
     _init();
   }
@@ -84,25 +75,17 @@ final class _TabletMainVMState extends State<TabletMainVM> {
     _namedStreamWState.listenStreamDataForNamedFromCallback((event) {
       setState(() {});
     });
-    final callback = await _rwtMode
-        .getNamedCallbackFromName("init")
-        .callback();
-    lamm.debugPrint("TabletMainVM: $callback");
+    final firstRequest = await _firstRequest();
+    lamm.debugPrint("TabletMainVM: $firstRequest");
     if(!mounted) {
       return;
     }
     _namedStreamWState.notifyStreamDataForNamed();
   }
 
-  Future<String> _initReleaseCallback() async {
+  Future<String> _firstRequest() async {
     await Future.delayed(const Duration(seconds: 1));
     _namedStreamWState.getDataForNamed.isLoading = false;
-    return KeysSuccessUtility.sUCCESS;
-  }
-
-  Future<String> _initTestCallback() async {
-    await Future.delayed(const Duration(seconds: 1));
-    _namedStreamWState.getDataForNamed.isLoading = false;
-    return KeysSuccessUtility.sUCCESS;
+    return ConstantsUtility.success;
   }
 }
