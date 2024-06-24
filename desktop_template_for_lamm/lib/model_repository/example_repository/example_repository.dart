@@ -7,11 +7,16 @@ import 'package:meta/meta.dart';
 base class ExampleRepository<T extends Example, Y extends ListExample<T>> extends BaseModelRepository<T, Y> {
   const ExampleRepository(super.enumRWTMode);
 
+  @protected
   @override
-  T getBaseModelFromMapAndListKeys(Map<String, dynamic>? map, List<String>? listKeys) {
-    return Example(map?[listKeys?[0] ?? ""] ?? "") as T;
+  T getBaseModelFromMapAndListKeys(Map<String, dynamic> map, List<String> listKeys) {
+    if (listKeys.isEmpty) {
+      return const Example("") as T;
+    }
+    return Example(map.containsKey(listKeys[0]) ? map[listKeys[0]] : "") as T;
   }
 
+  @protected
   @override
   Y getBaseListModelFromListModel(List<T> listModel) {
     return ListExample(listModel) as Y;
