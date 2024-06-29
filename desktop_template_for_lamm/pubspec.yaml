@@ -13,7 +13,7 @@ dependencies:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
-  library_architecture_mvvm_modify: ^3.0.2
+  library_architecture_mvvm_modify: ^3.0.3
   intl: ^0.18.1
   meta: ^1.10.0
   google_fonts: ^6.1.0
