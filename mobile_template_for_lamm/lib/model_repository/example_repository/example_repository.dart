@@ -5,15 +5,13 @@ import 'package:meta/meta.dart';
 
 @immutable
 base class ExampleRepository<T extends Example, Y extends ListExample<T>> extends BaseModelRepository<T, Y> {
-  const ExampleRepository(super.enumRWTMode);
+  const ExampleRepository();
 
   @protected
   @override
   T getBaseModelFromMapAndListKeys(Map<String, dynamic> map, List<String> listKeys) {
-    if (listKeys.isEmpty) {
-      return const Example("") as T;
-    }
-    return Example(map.containsKey(listKeys[0]) ? map[listKeys[0]] : "") as T;
+    return Example(getSafeValueWhereUsedInMethodGetModelFromMapAndListKeysAndIndexAndDefaultValue(
+        map, listKeys, 0, "")) as T;
   }
 
   @protected
@@ -22,17 +20,25 @@ base class ExampleRepository<T extends Example, Y extends ListExample<T>> extend
     return ListExample(listModel) as Y;
   }
 
-  Future<Result<T>> getExampleParameterQweService() async {
+  @nonVirtual
+  Future<Result<T>> getExampleParameterOne() async {
     return getModeCallbackFromReleaseCallbackAndTestCallbackParameterEnumRWTMode(
-        _getExampleParameterQweServiceWReleaseCallback,
-        _getExampleParameterQweServiceWTestCallback)();
+        getExampleParameterOneWReleaseCallback,
+        getExampleParameterOneWTestCallback)();
   }
 
-  Future<Result<T>> _getExampleParameterQweServiceWReleaseCallback() async {
+  @protected
+  Future<Result<T>> getExampleParameterOneWReleaseCallback() async {
     throw Exception();
   }
 
-  Future<Result<T>> _getExampleParameterQweServiceWTestCallback() async {
+  @protected
+  Future<Result<T>> getExampleParameterOneWTestCallback() async {
+    throw Exception();
+  }
+
+  @protected
+  List<String> get getExampleParameterOneWListKeys {
     throw Exception();
   }
 }
