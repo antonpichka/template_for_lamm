@@ -5,21 +5,17 @@ import 'package:responsive_framework/responsive_framework.dart';
 final class PlatformUtility {
   const PlatformUtility._();
 
-  static Widget getNamedViewFromContextAndMobileViewAndTabletView(
+  static Widget getNamedWidgetFromContextAndMobileWidgetAndTabletWidget(
       BuildContext context,
-      {Widget? mobileView,
-        Widget? tabletView})
+      {Widget? mobileWidget,
+      Widget? tabletWidget})
   {
-    if(ResponsiveBreakpoints.of(context).isMobile
-        && mobileView != null)
-    {
-      return mobileView;
+    if(ResponsiveBreakpoints.of(context).isMobile) {
+      return mobileWidget!;
     }
-    if(ResponsiveBreakpoints.of(context).isTablet
-        && tabletView != null)
-    {
-      return tabletView;
+    if(ResponsiveBreakpoints.of(context).isTablet) {
+      return tabletWidget!;
     }
-    return throw Exception("Null or no exists platform");
+    return mobileWidget!;
   }
 }

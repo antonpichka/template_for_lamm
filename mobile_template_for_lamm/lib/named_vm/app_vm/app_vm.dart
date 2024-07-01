@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_template_for_lamm/l10n/l10n.dart';
 import 'package:mobile_template_for_lamm/named_utility/flutter_theme_utility.dart';
-import 'package:mobile_template_for_lamm/named_utility/platform_utility.dart';
-import 'package:mobile_template_for_lamm/named_vm/mobile_main_vm/mobile_main_vm.dart';
-import 'package:mobile_template_for_lamm/named_vm/tablet_main_vm/tablet_main_vm.dart';
+import 'package:mobile_template_for_lamm/named_vm/main_vm/main_vm.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
 final class AppVM extends StatelessWidget {
@@ -26,10 +24,7 @@ final class AppVM extends StatelessWidget {
         ),
         initialRoute: "/",
         routes: {
-          "/" : (context) => PlatformUtility.getNamedViewFromContextAndMobileViewAndTabletView(
-              context,
-              mobileView: MobileMainVM(),
-              tabletView: TabletMainVM()),
+          "/" : (context) => MainVM()
         });
   }
 }

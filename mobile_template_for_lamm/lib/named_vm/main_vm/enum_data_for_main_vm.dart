@@ -1,4 +1,4 @@
-enum EnumDataForTabletMainVM {
+enum EnumDataForMainVM {
   isLoading,
   exception,
   success
