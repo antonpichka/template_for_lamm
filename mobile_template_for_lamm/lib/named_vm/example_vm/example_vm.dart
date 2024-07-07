@@ -42,12 +42,18 @@ final class _ExampleVMState extends State<ExampleVM> {
       case EnumDataForExampleVM.success:
         return PlatformUtility.getNamedWidgetFromContextAndMobileWidgetAndTabletWidget(
             context,
-            mobileWidget: const Scaffold(
-              body: Center(
+            mobileWidget: Scaffold(
+              appBar: AppBar(
+                title: const Text("Flutter App"),
+              ),
+              body: const Center(
                   child: Text("Hello World")),
             ),
-            tabletWidget: const Scaffold(
-              body: Center(
+            tabletWidget: Scaffold(
+              appBar: AppBar(
+                title: const Text("Flutter App"),
+              ),
+              body: const Center(
                   child: Text("Hello World")),
             ));
     }

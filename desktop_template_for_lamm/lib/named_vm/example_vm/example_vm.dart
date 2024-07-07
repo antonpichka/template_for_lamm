@@ -1,4 +1,5 @@
 import 'package:common_template_for_lamm/named_utility/ready_data_utility.dart';
+import 'package:desktop_template_for_lamm/named_utility/platform_utility.dart';
 import 'package:library_architecture_mvvm_modify/library_architecture_mvvm_modify.dart' as lamm;
 import 'package:desktop_template_for_lamm/named_vm/example_vm/data_for_example_vm.dart';
 import 'package:desktop_template_for_lamm/named_vm/example_vm/enum_data_for_example_vm.dart';
@@ -39,9 +40,34 @@ final class _ExampleVMState extends State<ExampleVM> {
       case EnumDataForExampleVM.exception:
         return Scaffold(body: Center(child: Text("Exception: ${dataForNamed.exceptionController.getKeyParameterException}")));
       case EnumDataForExampleVM.success:
-        return const Scaffold(
-          body: Center(
-              child: Text("Hello World")),
+        return PlatformUtility.getNamedWidgetFromContextAndMobileWidgetAndTabletWidget(
+            context,
+            mobileWidget: Scaffold(
+              appBar: AppBar(
+                title: const Text("Flutter App"),
+              ),
+              body: const Column(
+                children: [
+                  Text("Hello")
+                ],
+              ),
+            ),
+            tabletWidget: const Scaffold(
+              body: Column(
+                children: [
+                  Row(
+                    children: [
+                      Text("Hello")
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      Text("Hello")
+                    ],
+                  ),
+                ],
+              ),
+            )
         );
     }
   }

@@ -42,32 +42,33 @@ final class _MainVMState extends State<MainVM> {
       case EnumDataForMainVM.success:
         return PlatformUtility.getNamedWidgetFromContextAndMobileWidgetAndTabletWidget(
             context,
-            mobileWidget: SafeArea(
-              child: Scaffold(
-                body: SingleChildScrollView(
-                  child: Align(
-                    alignment: Alignment.center,
-                    child: Column(
-                      children: [
-                        const Text("Mobile (MaxRowCount: 1)"),
-                        ResponsiveGridView.builder(
-                          gridDelegate: const ResponsiveGridDelegate(
-                              crossAxisExtent: 120,
-                              mainAxisSpacing: 16,
-                              crossAxisSpacing: 16,
-                              childAspectRatio: 1.37),
-                          maxRowCount: 1,
-                          itemCount: 30,
-                          shrinkWrap: true,
-                          physics: const NeverScrollableScrollPhysics(),
-                          padding: const EdgeInsets.fromLTRB(4, 8, 0, 16),
-                          alignment: Alignment.center,
-                          itemBuilder: (context, index) {
-                            return const ListTile(title: Text("Op",),);
-                          },
-                        ),
-                      ],
-                    ),
+            mobileWidget: Scaffold(
+              appBar: AppBar(
+                title: const Text("Flutter App"),
+              ),
+              body: SingleChildScrollView(
+                child: Align(
+                  alignment: Alignment.center,
+                  child: Column(
+                    children: [
+                      const Text("Mobile (MaxRowCount: 1)"),
+                      ResponsiveGridView.builder(
+                        gridDelegate: const ResponsiveGridDelegate(
+                            crossAxisExtent: 120,
+                            mainAxisSpacing: 16,
+                            crossAxisSpacing: 16,
+                            childAspectRatio: 1.37),
+                        maxRowCount: 1,
+                        itemCount: 30,
+                        shrinkWrap: true,
+                        physics: const NeverScrollableScrollPhysics(),
+                        padding: const EdgeInsets.fromLTRB(4, 8, 0, 16),
+                        alignment: Alignment.center,
+                        itemBuilder: (context, index) {
+                          return const ListTile(title: Text("Op",),);
+                        },
+                      ),
+                    ],
                   ),
                 ),
               ),
