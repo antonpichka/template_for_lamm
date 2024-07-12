@@ -1,4 +1,5 @@
 import 'package:common_template_for_lamm/named_utility/ready_data_utility.dart';
+import 'package:desktop_template_for_lamm/named_utility/factory_object_utility.dart';
 import 'package:desktop_template_for_lamm/named_utility/platform_utility.dart';
 import 'package:library_architecture_mvvm_modify/library_architecture_mvvm_modify.dart' as lamm;
 import 'package:desktop_template_for_lamm/named_vm/example_vm/data_for_example_vm.dart';
@@ -19,7 +20,7 @@ final class _ExampleVMState extends State<ExampleVM> {
 
   @override
   void initState() {
-    _namedStreamWState = lamm.DefaultStreamWState<DataForExampleVM>(DataForExampleVM(true));
+    _namedStreamWState = FactoryObjectUtility.getNamedStreamWStateWhereDataWExampleVM;
     super.initState();
     _init();
   }

@@ -1,11 +1,11 @@
 import 'package:common_template_for_lamm/named_utility/ready_data_utility.dart';
+import 'package:desktop_template_for_lamm/named_utility/factory_object_utility.dart';
 import 'package:desktop_template_for_lamm/named_utility/platform_utility.dart';
-import 'package:desktop_template_for_lamm/named_utility/system_tray_utility.dart';
 import 'package:desktop_template_for_lamm/named_utility/window_manager_utility.dart';
-import 'package:library_architecture_mvvm_modify/library_architecture_mvvm_modify.dart' as lamm;
 import 'package:desktop_template_for_lamm/named_vm/main_vm/data_for_main_vm.dart';
 import 'package:desktop_template_for_lamm/named_vm/main_vm/enum_data_for_main_vm.dart';
 import 'package:flutter/material.dart';
+import 'package:library_architecture_mvvm_modify/library_architecture_mvvm_modify.dart' as lamm;
 import 'package:window_manager/window_manager.dart';
 
 final class MainVM extends StatefulWidget {
@@ -22,7 +22,7 @@ final class _MainVMState extends State<MainVM> with WindowListener {
 
   @override
   void initState() {
-    _namedStreamWState = lamm.DefaultStreamWState<DataForMainVM>(DataForMainVM(true));
+    _namedStreamWState = FactoryObjectUtility.getNamedStreamWStateWhereDataWMainVM;
     super.initState();
     WindowManagerUtility.addFromWindowListenerParameterWindowManager(this);
     _init();
