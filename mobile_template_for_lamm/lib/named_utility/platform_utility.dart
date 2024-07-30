@@ -7,15 +7,15 @@ final class PlatformUtility {
 
   static Widget getNamedWidgetFromContextAndMobileWidgetAndTabletWidget(
       BuildContext context,
-      {Widget? mobileWidget,
+      {required Widget mobileWidget,
       Widget? tabletWidget})
   {
     if(ResponsiveBreakpoints.of(context).isMobile) {
-      return mobileWidget!;
+      return mobileWidget;
     }
     if(ResponsiveBreakpoints.of(context).isTablet) {
-      return tabletWidget!;
+      return tabletWidget ?? mobileWidget;
     }
-    return mobileWidget!;
+    return mobileWidget;
   }
 }

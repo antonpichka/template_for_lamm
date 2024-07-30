@@ -17,11 +17,15 @@ final class _MainVMState extends State<MainVM> with WindowListener {
   // ModelRepository
   // NamedUtility
 
+  // TempCacheProvider
+  late final lamm.TempCacheProvider _tempCacheProvider;
+
   // NamedStreamWState
   late final lamm.BaseNamedStreamWState<DataForMainVM> _namedStreamWState;
 
   @override
   void initState() {
+    _tempCacheProvider = lamm.TempCacheProvider();
     _namedStreamWState = FactoryObjectUtility.getNamedStreamWStateWhereDataWMainVM;
     super.initState();
     WindowManagerUtility.addFromWindowListenerParameterWindowManager(this);
@@ -31,6 +35,7 @@ final class _MainVMState extends State<MainVM> with WindowListener {
 
   @override
   void dispose() {
+    _tempCacheProvider.dispose([]);
     _namedStreamWState.dispose();
     WindowManagerUtility.removeFromWindowListenerParameterWindowManager(this);
     super.dispose();
