@@ -50,7 +50,7 @@ final class _MainVMState extends State<MainVM> with WindowListener {
       case EnumDataForMainVM.exception:
         return Scaffold(body: Center(child: Text("Exception: ${dataForNamed.exceptionController.getKeyParameterException}")));
       case EnumDataForMainVM.success:
-        return PlatformUtility.getNamedWidgetFromContextAndMobileWidgetAndTabletWidget(
+        return PlatformUtility.getNamedWidgetFromContextAndMobileWidgetAndDesktopWidget(
             context,
             mobileWidget: Scaffold(
               appBar: AppBar(
@@ -62,7 +62,7 @@ final class _MainVMState extends State<MainVM> with WindowListener {
                 ],
               ),
             ),
-            tabletWidget: const Scaffold(
+            desktopWidget: const Scaffold(
               body: Column(
                 children: [
                   Row(

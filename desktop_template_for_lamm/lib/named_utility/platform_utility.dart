@@ -5,16 +5,16 @@ import 'package:responsive_framework/responsive_framework.dart';
 final class PlatformUtility {
   const PlatformUtility._();
 
-  static Widget getNamedWidgetFromContextAndMobileWidgetAndTabletWidget(
+  static Widget getNamedWidgetFromContextAndMobileWidgetAndDesktopWidget(
       BuildContext context,
       {required Widget mobileWidget,
-      Widget? tabletWidget})
+      Widget? desktopWidget})
   {
     if(ResponsiveBreakpoints.of(context).isMobile) {
       return mobileWidget;
     }
-    if(ResponsiveBreakpoints.of(context).isTablet) {
-      return tabletWidget ?? mobileWidget;
+    if(ResponsiveBreakpoints.of(context).isDesktop) {
+      return desktopWidget ?? mobileWidget;
     }
     return mobileWidget;
   }

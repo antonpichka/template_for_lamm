@@ -46,7 +46,7 @@ final class _ExampleVMState extends State<ExampleVM> {
       case EnumDataForExampleVM.exception:
         return Scaffold(body: Center(child: Text("Exception: ${dataForNamed.exceptionController.getKeyParameterException}")));
       case EnumDataForExampleVM.success:
-        return PlatformUtility.getNamedWidgetFromContextAndMobileWidgetAndTabletWidget(
+        return PlatformUtility.getNamedWidgetFromContextAndMobileWidgetAndDesktopWidget(
             context,
             mobileWidget: Scaffold(
               appBar: AppBar(
@@ -58,7 +58,7 @@ final class _ExampleVMState extends State<ExampleVM> {
                 ],
               ),
             ),
-            tabletWidget: const Scaffold(
+            desktopWidget: const Scaffold(
               body: Column(
                 children: [
                   Row(
