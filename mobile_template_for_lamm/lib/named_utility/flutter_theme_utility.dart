@@ -4,7 +4,6 @@ import 'package:google_fonts/google_fonts.dart';
 @immutable
 final class FlutterThemeUtility {
   static const Color seedColor = Color.fromRGBO(13, 17, 23,1.0);
-  static const Color discordLogoColor = Color.fromRGBO(88, 101, 242,1.0);
 
   const FlutterThemeUtility._();
 
@@ -15,18 +14,6 @@ final class FlutterThemeUtility {
         brightness: Brightness.light,
         seedColor: seedColor,
       ),
-      textTheme: TextTheme(
-        displayLarge: const TextStyle(
-          fontSize: 72,
-          fontWeight: FontWeight.bold,
-        ),
-        titleLarge: GoogleFonts.oswald(
-          fontSize: 30,
-          fontStyle: FontStyle.italic,
-        ),
-        bodyMedium: GoogleFonts.merriweather(),
-        displaySmall: GoogleFonts.pacifico(),
-      ),
     );
   }
 
@@ -36,18 +23,6 @@ final class FlutterThemeUtility {
       colorScheme: ColorScheme.fromSeed(
         brightness: Brightness.dark,
         seedColor: seedColor,
-      ),
-      textTheme: TextTheme(
-        displayLarge: const TextStyle(
-          fontSize: 72,
-          fontWeight: FontWeight.bold,
-        ),
-        titleLarge: GoogleFonts.oswald(
-          fontSize: 30,
-          fontStyle: FontStyle.italic,
-        ),
-        bodyMedium: GoogleFonts.merriweather(),
-        displaySmall: GoogleFonts.pacifico(),
       ),
     );
   }

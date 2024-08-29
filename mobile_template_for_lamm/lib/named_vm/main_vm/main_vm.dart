@@ -13,7 +13,7 @@ final class MainVM extends StatefulWidget {
 }
 
 final class _MainVMState extends State<MainVM> {
-  // ModelRepository
+  // ModelWrapperRepository
   // NamedUtility
 
   // TempCacheProvider
@@ -21,21 +21,6 @@ final class _MainVMState extends State<MainVM> {
 
   // NamedStreamWState
   late final lamm.BaseNamedStreamWState<DataForMainVM> _namedStreamWState;
-
-  @override
-  void initState() {
-    _tempCacheProvider = lamm.TempCacheProvider();
-    _namedStreamWState = FactoryObjectUtility.getNamedStreamWStateWhereDataWMainVM;
-    super.initState();
-    _init();
-  }
-
-  @override
-  void dispose() {
-    _tempCacheProvider.dispose([]);
-    _namedStreamWState.dispose();
-    super.dispose();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -110,6 +95,21 @@ final class _MainVMState extends State<MainVM> {
             )
         );
     }
+  }
+
+  @override
+  void initState() {
+    _tempCacheProvider = lamm.TempCacheProvider();
+    _namedStreamWState = FactoryObjectUtility.getNamedStreamWStateWhereDataWMainVM;
+    super.initState();
+    _init();
+  }
+
+  @override
+  void dispose() {
+    _tempCacheProvider.dispose([]);
+    _namedStreamWState.dispose();
+    super.dispose();
   }
 
   Future<void> _init() async {

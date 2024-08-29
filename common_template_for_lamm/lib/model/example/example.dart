@@ -6,7 +6,7 @@ base class Example extends BaseModel {
   const Example(super.uniqueId);
 
   @override
-  Example get getClone => Example(uniqueId);
+  Example clone() => Example(uniqueId);
 
   @override
   String toString() {

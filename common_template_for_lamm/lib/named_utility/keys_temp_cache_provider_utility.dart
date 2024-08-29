@@ -6,7 +6,6 @@ final class KeysTempCacheProviderUtility {
   static const String iPAddressQQIp = "iPAddressQQIp";
   /* EnumBottomNavigationBar */
   static const String enumBottomNavigationBar = "enumBottomNavigationBar";
-  static const String enumBottomNavigationBarFirst = "enumBottomNavigationBarFirst";
 
   const KeysTempCacheProviderUtility._();
 }

@@ -1,20 +1,18 @@
 import 'package:common_template_for_lamm/named_utility/ready_data_utility.dart';
 import 'package:desktop_template_for_lamm/named_utility/factory_object_utility.dart';
 import 'package:desktop_template_for_lamm/named_utility/platform_utility.dart';
-import 'package:desktop_template_for_lamm/named_utility/window_manager_utility.dart';
 import 'package:desktop_template_for_lamm/named_vm/main_vm/data_for_main_vm.dart';
 import 'package:desktop_template_for_lamm/named_vm/main_vm/enum_data_for_main_vm.dart';
 import 'package:flutter/material.dart';
 import 'package:library_architecture_mvvm_modify/library_architecture_mvvm_modify.dart' as lamm;
-import 'package:window_manager/window_manager.dart';
 
 final class MainVM extends StatefulWidget {
   @override
   State<MainVM> createState() => _MainVMState();
 }
 
-final class _MainVMState extends State<MainVM> with WindowListener {
-  // ModelRepository
+final class _MainVMState extends State<MainVM> {
+  // ModelWrapperRepository
   // NamedUtility
 
   // TempCacheProvider
@@ -22,24 +20,6 @@ final class _MainVMState extends State<MainVM> with WindowListener {
 
   // NamedStreamWState
   late final lamm.BaseNamedStreamWState<DataForMainVM> _namedStreamWState;
-
-  @override
-  void initState() {
-    _tempCacheProvider = lamm.TempCacheProvider();
-    _namedStreamWState = FactoryObjectUtility.getNamedStreamWStateWhereDataWMainVM;
-    super.initState();
-    WindowManagerUtility.addFromWindowListenerParameterWindowManager(this);
-    _init();
-  }
-
-
-  @override
-  void dispose() {
-    _tempCacheProvider.dispose([]);
-    _namedStreamWState.dispose();
-    WindowManagerUtility.removeFromWindowListenerParameterWindowManager(this);
-    super.dispose();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -83,8 +63,18 @@ final class _MainVMState extends State<MainVM> with WindowListener {
   }
 
   @override
-  void onWindowClose() {
-    WindowManagerUtility.hideParameterWindowManager();
+  void initState() {
+    _tempCacheProvider = lamm.TempCacheProvider();
+    _namedStreamWState = FactoryObjectUtility.getNamedStreamWStateWhereDataWMainVM;
+    super.initState();
+    _init();
+  }
+
+  @override
+  void dispose() {
+    _tempCacheProvider.dispose([]);
+    _namedStreamWState.dispose();
+    super.dispose();
   }
 
   Future<void> _init() async {

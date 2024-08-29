@@ -7,10 +7,10 @@ base class ListExample<T extends Example> extends BaseListModel<T> {
   const ListExample(super.listModel);
 
   @override
-  ListExample<T> get getClone {
+  ListExample<T> clone() {
     List<T> newListModel = List.empty(growable: true);
     for (final T model in listModel) {
-      newListModel.add(model.getClone as T);
+      newListModel.add(model.clone() as T);
     }
     return ListExample<T>(newListModel);
   }
