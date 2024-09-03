@@ -29,15 +29,15 @@ final class _AppVMState extends State<AppVM> with WindowListener {
 
   @override
   Widget build(BuildContext context) {
-    final dataForNamed = _namedStreamWState.getDataForNamed;
-    switch(dataForNamed.getEnumDataForNamed) {
+    final dataWNamed = _namedStreamWState.getDataForNamed;
+    switch(dataWNamed.getEnumDataForNamed) {
       case EnumDataForAppVM.isLoading:
         return Container(color: Colors.white);
       case EnumDataForAppVM.exception:
         return Container(
           color: Colors.red,
           child: Center(
-              child: Text("Exception: ${dataForNamed.exceptionController.getKeyParameterException}")
+              child: Text("Exception: ${dataWNamed.exceptionController.getKeyParameterException}")
           ),
         );
       case EnumDataForAppVM.success:

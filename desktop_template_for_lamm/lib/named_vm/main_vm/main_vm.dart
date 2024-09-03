@@ -23,12 +23,12 @@ final class _MainVMState extends State<MainVM> {
 
   @override
   Widget build(BuildContext context) {
-    final dataForNamed = _namedStreamWState.getDataForNamed;
-    switch(dataForNamed.getEnumDataForNamed) {
+    final dataWNamed = _namedStreamWState.getDataForNamed;
+    switch(dataWNamed.getEnumDataForNamed) {
       case EnumDataForMainVM.isLoading:
         return const Scaffold(body: Center(child: CircularProgressIndicator()));
       case EnumDataForMainVM.exception:
-        return Scaffold(body: Center(child: Text("Exception: ${dataForNamed.exceptionController.getKeyParameterException}")));
+        return Scaffold(body: Center(child: Text("Exception: ${dataWNamed.exceptionController.getKeyParameterException}")));
       case EnumDataForMainVM.success:
         return PlatformUtility.getNamedWidgetFromContextAndMobileWidgetAndDesktopWidget(
             context,

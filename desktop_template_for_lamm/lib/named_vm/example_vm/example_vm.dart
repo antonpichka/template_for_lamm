@@ -23,12 +23,12 @@ final class _ExampleVMState extends State<ExampleVM> {
 
   @override
   Widget build(BuildContext context) {
-    final dataForNamed = _namedStreamWState.getDataForNamed;
-    switch(dataForNamed.getEnumDataForNamed) {
+    final dataWNamed = _namedStreamWState.getDataForNamed;
+    switch(dataWNamed.getEnumDataForNamed) {
       case EnumDataForExampleVM.isLoading:
         return const Scaffold(body: Center(child: CircularProgressIndicator()));
       case EnumDataForExampleVM.exception:
-        return Scaffold(body: Center(child: Text("Exception: ${dataForNamed.exceptionController.getKeyParameterException}")));
+        return Scaffold(body: Center(child: Text("Exception: ${dataWNamed.exceptionController.getKeyParameterException}")));
       case EnumDataForExampleVM.success:
         return PlatformUtility.getNamedWidgetFromContextAndMobileWidgetAndDesktopWidget(
             context,

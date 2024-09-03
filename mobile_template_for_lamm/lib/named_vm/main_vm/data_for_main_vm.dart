@@ -17,7 +17,7 @@ final class DataForMainVM extends BaseDataForNamed<EnumDataForMainVM> {
 
   @override
   String toString() {
-    return "DataForMobileMainVM(isLoading: $isLoading, "
+    return "DataForMainVM(isLoading: $isLoading, "
         "exceptionController: $exceptionController)";
   }
 }

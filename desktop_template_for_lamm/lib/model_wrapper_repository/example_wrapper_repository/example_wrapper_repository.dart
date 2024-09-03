@@ -1,5 +1,5 @@
-import 'package:common_template_for_lamm/model/example/example_wrapper.dart';
-import 'package:common_template_for_lamm/model/example/list_example_wrapper.dart';
+import 'package:common_template_for_lamm/model/example/example_wrapper/example_wrapper.dart';
+import 'package:common_template_for_lamm/model/example/example_wrapper/list_example_wrapper.dart';
 import 'package:library_architecture_mvvm_modify/library_architecture_mvvm_modify.dart';
 import 'package:meta/meta.dart';
 
