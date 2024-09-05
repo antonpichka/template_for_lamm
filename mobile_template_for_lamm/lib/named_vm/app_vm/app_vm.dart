@@ -20,7 +20,7 @@ final class _AppVMState extends State<AppVM> {
   // NamedUtility
 
   // TempCacheProvider
-  late final lamm.TempCacheProvider _tempCacheProvider;
+  final _tempCacheProvider = lamm.TempCacheProvider();
 
   // NamedStreamWState
   late final lamm.BaseNamedStreamWState<DataForAppVM> _namedStreamWState;
@@ -63,7 +63,6 @@ final class _AppVMState extends State<AppVM> {
 
   @override
   void initState() {
-    _tempCacheProvider = lamm.TempCacheProvider();
     _namedStreamWState = FactoryObjectUtility.getNamedStreamWStateWhereDataWAppVM;
     super.initState();
     _init();

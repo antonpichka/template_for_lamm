@@ -22,7 +22,7 @@ final class _AppVMState extends State<AppVM> with WindowListener {
   // NamedUtility
 
   // TempCacheProvider
-  late final lamm.TempCacheProvider _tempCacheProvider;
+  final _tempCacheProvider = lamm.TempCacheProvider();
 
   // NamedStreamWState
   late final lamm.BaseNamedStreamWState<DataForAppVM> _namedStreamWState;
@@ -65,7 +65,6 @@ final class _AppVMState extends State<AppVM> with WindowListener {
 
   @override
   void initState() {
-    _tempCacheProvider = lamm.TempCacheProvider();
     _namedStreamWState = FactoryObjectUtility.getNamedStreamWStateWhereDataWAppVM;
     super.initState();
     WindowManagerUtility.addFromWindowListenerParameterWindowManager(this);

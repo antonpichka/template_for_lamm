@@ -16,7 +16,7 @@ final class _ExampleVMState extends State<ExampleVM> {
   // NamedUtility
 
   // TempCacheProvider
-  late final lamm.TempCacheProvider _tempCacheProvider;
+  final _tempCacheProvider = lamm.TempCacheProvider();
 
   // NamedStreamWState
   late final lamm.BaseNamedStreamWState<DataForExampleVM> _namedStreamWState;
@@ -64,7 +64,6 @@ final class _ExampleVMState extends State<ExampleVM> {
 
   @override
   void initState() {
-    _tempCacheProvider = lamm.TempCacheProvider();
     _namedStreamWState = FactoryObjectUtility.getNamedStreamWStateWhereDataWExampleVM;
     super.initState();
     _init();
