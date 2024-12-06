@@ -88,6 +88,7 @@ final class _AppVMState extends State<AppVM> {
   }
 
   Future<String> _firstRequest() async {
+    _namedStreamWState.getDataForNamed.isLoading = false;
     return ReadyDataUtility.success;
   }
 }

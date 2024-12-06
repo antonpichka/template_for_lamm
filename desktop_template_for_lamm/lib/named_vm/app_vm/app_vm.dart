@@ -97,6 +97,7 @@ final class _AppVMState extends State<AppVM> with WindowListener {
   }
 
   Future<String> _firstRequest() async {
+    _namedStreamWState.getDataForNamed.isLoading = false;
     return ReadyDataUtility.success;
   }
 }
