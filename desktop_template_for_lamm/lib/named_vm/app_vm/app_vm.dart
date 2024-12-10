@@ -1,14 +1,13 @@
 import 'package:common_template_for_lamm/named_utility/ready_data_utility.dart';
+import 'package:desktop_template_for_lamm/l10n/l10n.dart';
+import 'package:desktop_template_for_lamm/named_utility/flutter_theme_utility.dart';
 import 'package:desktop_template_for_lamm/named_utility/keys_routes_utility.dart';
 import 'package:desktop_template_for_lamm/named_utility/window_manager_utility.dart';
 import 'package:desktop_template_for_lamm/named_vm/app_vm/data_for_app_vm.dart';
 import 'package:desktop_template_for_lamm/named_vm/app_vm/enum_data_for_app_vm.dart';
-import 'package:library_architecture_mvvm_modify/library_architecture_mvvm_modify.dart' as lamm;
-import 'package:desktop_template_for_lamm/named_utility/factory_object_utility.dart';
-import 'package:flutter/material.dart';
-import 'package:desktop_template_for_lamm/l10n/l10n.dart';
-import 'package:desktop_template_for_lamm/named_utility/flutter_theme_utility.dart';
 import 'package:desktop_template_for_lamm/named_vm/main_vm/main_vm.dart';
+import 'package:flutter/material.dart';
+import 'package:library_architecture_mvvm_modify/library_architecture_mvvm_modify.dart' as lamm;
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:window_manager/window_manager.dart';
 
@@ -65,7 +64,7 @@ final class _AppVMState extends State<AppVM> with WindowListener {
 
   @override
   void initState() {
-    _namedStreamWState = FactoryObjectUtility.getNamedStreamWStateWhereDataWAppVM;
+    _namedStreamWState = lamm.DefaultStreamWState(DataForAppVM(true));
     super.initState();
     WindowManagerUtility.addFromWindowListenerParameterWindowManager(this);
     _init();
@@ -97,6 +96,7 @@ final class _AppVMState extends State<AppVM> with WindowListener {
   }
 
   Future<String> _firstRequest() async {
+    await Future.delayed(const Duration(seconds: 1));
     _namedStreamWState.getDataForNamed.isLoading = false;
     return ReadyDataUtility.success;
   }

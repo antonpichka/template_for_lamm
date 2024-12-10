@@ -6,9 +6,9 @@ environment:
   sdk: ">=3.0.0 <4.0.0"
 
 dependencies:
-  library_architecture_mvvm_modify: ^6.0.6
+  library_architecture_mvvm_modify: ^6.0.8
   meta: ^1.10.0
 
 dev_dependencies:
-  lints: ^3.0.0
+  lints: ^5.0.0
   test: ^1.24.4
