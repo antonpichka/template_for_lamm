@@ -6,7 +6,7 @@ import 'package:meta/meta.dart';
 
 @immutable
 base class ListExampleWrapper extends BaseListModelWrapper {
-  const ListExampleWrapper(super.listObject);
+  const ListExampleWrapper(super.listsListObject);
 
   @override
   ListExample createListModel() {
