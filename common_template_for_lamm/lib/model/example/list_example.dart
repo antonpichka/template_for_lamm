@@ -9,8 +9,8 @@ base class ListExample<T extends Example> extends BaseListModel<T> {
   @override
   ListExample<T> clone() {
     List<T> newListModel = List.empty(growable: true);
-    for (final T model in listModel) {
-      newListModel.add(model.clone() as T);
+    for (final T itemModel in listModel) {
+      newListModel.add(itemModel.clone() as T);
     }
     return ListExample<T>(newListModel);
   }
